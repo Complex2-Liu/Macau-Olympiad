@@ -1,0 +1,19 @@
+\begin{prob}
+\label{prob:prob-3}
+\addcontentsline{toc}{section}{3. Problem 3}
+在 $xy$ 平面上, 记 $f(a,b)$ 为点 $(a,b)$ 到直线 $\ell: 3x + 4y = 1$ 的距离.
+当 $a,b$ 走遍所有整数且 $(a,b)$ 不在直线 $\ell$, 确定 $f(a,b)$ 的最小值.
+\end{prob}
+
+\begin{soln}
+回忆点到直线的距离公式
+\begin{equation}
+\label{eq2}
+d = \abs*{\frac{3a + 4b - 1}{\sqrt{3^2 + 4^2}}}.
+\end{equation}
+题目的要求为 $a,b \in \ZZ$ 且 $3a + 4b - 1 \ne 0$,
+注意到 $3a + 4b - 1 \in \ZZ$, 所以
+\[
+d_{\mathrm{min}} = \boxed{\frac{1}{5}.}
+\]
+\end{soln}

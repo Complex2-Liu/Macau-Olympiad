@@ -1,0 +1,21 @@
+\begin{prob}
+\label{prob:prob-9}
+\addcontentsline{toc}{section}{9. Problem 9}
+确定实系数多项式 $P(x)$ 使得多项式
+$(x+1)P(x-1) - (x-1)P(x)$ 只有常数项.
+\end{prob}
+
+\begin{soln}
+显然 $P(x)$ 为常数满足题意, 下面假设 $\deg P(x) \ge 1$.
+设 $P(x) = \sum_{i=1}^n a_ix^i, \allowbreak Q(x) := (x+1)P(x-1)-(x-1)P(x)
+=P(x-1)+P(x) - x(P(x)-P(x-1))$.
+显然 $P(x-1) + P(x)$ 的首项系数为 $2a_n$,
+而 $x(P(x) - P(x-1))$ 的首项系数为 $na_n$,
+所以只能是 $n=2$. 设 $P(x) = ax^2 + bx + c$,
+则 $Q(x) = (b-a)x + (2c+a-b)$, 由此推出 $b=a$.
+综上, 满足题意的实系数多项式为
+\begin{equation}
+\label{eq12}
+P(x) = ax^2 + ax + c, \quad a,c \in \RR.
+\end{equation}
+\end{soln}

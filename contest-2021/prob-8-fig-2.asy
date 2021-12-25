@@ -1,0 +1,31 @@
+import olympiad;
+import cse5;
+size(6.5cm);
+defaultpen(fontsize(9pt));
+
+pair X=dir(50);
+pair A=dir(-145);
+pair B=dir(-35);
+pair I=incenter(X, A, B);
+pair P=IP(L(X, I, 5), A -- B);
+pair Q=IP(L((rotate(90) * (P - X)) + X, X, 10), L(A, B, 10));
+
+dot(X);
+dot(A);
+dot(B);
+dot(P);
+dot(Q);
+draw(MA(A, X, P, 0.25, blue));
+draw(MA(P, X, B, 0.35, red));
+draw(X--A--B--cycle);
+draw(X--P, dashed);
+draw(B--Q);
+draw(X--Q, dashed);
+label("$\alpha$", X, dir(-125)*6, blue);
+label("$\beta$", X, dir(-95)*7, red);
+label("$X$", X, N*1.5);
+label("$A$", A, S*1.5);
+label("$B$", B, S*1.5);
+label("$P$", P, S*1.5);
+label("$Q$", Q, S*1.5);
+label("$\ell$", 0.5*A + 0.5*Q, N*1.5);

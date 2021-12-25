@@ -1,0 +1,84 @@
+\begin{prob}
+\label{prob:prob-4}
+\addcontentsline{toc}{section}{4. Problem 4}
+将边长为 $n$ 的等边三角形的每条边等分 $n$ 份,
+然后用平行这三边的线段连起这些等分点,
+得出一些由边长为 $1$ 的等边三角形所组成的图形 $S_n$.
+设图形 $S_n$ 共有 $N_n$ 个边长 $1$ 至 $n$ 的等边三角形.
+下图给出当 $n=1,2,3$ 的图形, $N_1 = 1, N_2 = 5$.
+试找出用 $n$ 表示 $N_n$ 的公式.
+\begin{center}
+\includegraphics{prob-4.pdf}
+\end{center}
+\end{prob}
+
+\begin{soln}
+我们把等边三角形划分为两类: 一类头朝上, 一类头朝下,
+以 $n=2$ 为例, 有 $4$ 个头朝上的三角形, $1$ 个头朝下的三角形.
+设 $a_i(n)$ 为 $S_n$ 中边长为 $i$ 的头朝上的等边三角形的个数.
+注意到一个等边三角形被它的一条水平方向的边, 以及头的朝向给唯一决定, 所以
+\begin{equation}
+\label{eq3}
+a_i(n) = (n-i+1) + (n-1-i+1) + \cdots + 1.
+\end{equation}
+以 $n=3$ 为例, 最底层(记为第 $0$ 层)长度为 $3$,
+贡献 $3-i+1$ 个边长为 $i$ 的头朝上的等边三角形,
+上一层(记为第 $1$ 层)长度为 $2$,
+贡献 $2-i+1$ 个边长为 $i$ 的头朝上的等边三角形.
+我们有
+\begin{align*}
+a_1(n)&=1 + 2 + \cdots + (n-1) + n\\
+a_2(n)&=1 + 2 + \cdots + (n-1)\\
+      &\cdots\\
+a_n(n)&=1.
+\end{align*}
+换序求和便知
+\begin{align*}
+\sum_{i=1}^n a_i(n) &= \sum_{i=1}^n i\cdot(n+1-i) = (n+1)\cdot\sum_{i=1}^n i - \sum_{i=1}^n i^2\\
+&=(n+1)\cdot \frac{n(n+1)}{2} - \frac{n(n+1)(2n+1)}{6}\\
+&=\frac{n(n+1)(n+2)}{6}.
+\end{align*}
+
+设 $b_i(n)$ 为 $S_n$ 中边长为 $i$ 的头朝下的等边三角形的个数.
+对于第 $j$ 层, 它的长度为 $n-j$,
+它不可能贡献边长 $> j$ 的头朝下的等边三角形.
+类似于 \cref{eq3} 我们可以得到
+\begin{equation}
+\label{eq4}
+b_i(n) = (n-i-i+1) + \cdots + 1,
+\end{equation}
+其中 $n-i-i+1$ 由第 $i$ 层贡献. 我们有
+\begin{align*}
+b_1(n) &= 1 + 2 + \cdots + (n-3) + (n-2) + (n-1)\\
+b_2(n) &= 1 + 2 + \cdots + (n-3)\\
+       &\cdots\\
+b_i(n) &= 1 + 2 + \cdots + (n-2i+1).
+\end{align*}
+不难计算得
+\begin{equation}
+\label{eq5}
+\sum_i b_i(n) = \begin{cases}
+\frac{(n+1)(n-1)(2n+3)}{24}, \quad &\text{if $n$ is odd};\\
+\frac{n(n+2)(2n-1)}{24}, \quad &\text{if $n$ is even}.
+\end{cases}
+\end{equation}
+这里以 $n = 2k-1$ 为例, 此时
+\begin{align*}
+b_1(n)     &= 1 + 2 + \cdots + (n-3) + (n-2) + (n-1),\\
+           &\cdots\\
+b_{k-2}(n) &= 1 + 2 + 3 + 4 + 5 + 6,\\
+b_{k-1}(n) &= 1 + 2 + 3 + 4,\\
+b_{k}(n)   &= 1 + 2.
+\end{align*}
+所以
+\[
+\sum_i b_i(n) = \sum_{i=1}^{k-1}(k-i)(-1+4i)=\frac{k(k-1)(4k+1)}{6}.
+\]
+We finally conclude that
+\[
+\boxed{N_n = \begin{cases}
+\frac{(n+1)(2n^3 + 3n - 1)}{8}, \quad &\text{if $n$ is odd};\\
+\frac{n(n+2)(2n+1)}{8},         \quad &\text{if $n$ is even}.
+\end{cases}}
+\]
+\end{soln}

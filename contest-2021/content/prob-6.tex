@@ -1,0 +1,17 @@
+\begin{prob}
+\label{prob:prob-6}
+\addcontentsline{toc}{section}{6. Problem 6}
+定义 $f(x) = \frac{9^x}{9^x + 3}$.
+计算 $f(\frac{1}{2021}) + f(\frac{2}{2021}) + \cdots + f(\frac{2020}{2021})$.
+\end{prob}
+
+\begin{soln}
+注意到
+\begin{equation}
+\label{eq8}
+f(a) + f(1-a) = \frac{3^{2a}}{3^{2a} + 3} + \frac{3^{2-2a}}{3^{2-2a} + 3}
+=\frac{3^{2a}}{3^{2a} + 3} + \frac{3}{3 + 3^{2a}} = 1
+\end{equation}
+对任意 $a \in (0,1)$ 成立.
+故答案为 $\boxed{1010.}$
+\end{soln}

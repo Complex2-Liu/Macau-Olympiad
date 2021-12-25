@@ -1,0 +1,51 @@
+\begin{prob}
+\label{prob:prob-8}
+\addcontentsline{toc}{section}{8. Problem 8}
+如图在锐角三角形 $ABC$ 中, $AD$ 是边 $BC$ 上的高,
+$H$ 是线段 $AD$ 内任一点, $BH$ 和 $CH$ 的延长线分别交
+$AC$ 和 $AB$ 于 $E$ 和 $F$, 求证 $\angle EDH = \angle FDH$.
+\end{prob}
+
+\begin{center}
+\includegraphics{prob-8-fig-1.pdf}
+\end{center}
+
+\begin{soln}
+设 $DF$ 交 $AC$ 于 $G$, 则由完全四边形的性质知 $(C,A;E,G)$ 构成调和点列.
+
+\begin{lem}[调和点列的性质]
+\label{lem:harmony-property}
+设 $A,B,P,Q$ 是直线 $\ell$ 上的 $4$ 个点,
+$X$ 是不在 $\ell$ 上的任意一点,
+则以下 $4$ 个陈述, 任意 $2$ 个可以推出另外 $2$ 个:
+\begin{enumerate}[label=\normalfont(\roman*)]
+\item $(A,B;P,Q)$ 构成调和点列.
+\item $XP$ 是 $\angle AXB$ 的内角平分线.
+\item $XQ$ 是 $\angle AXB$ 的外角平分线.
+\item $XP \perp XQ$.
+\end{enumerate}
+\end{lem}
+
+\begin{center}
+\includegraphics{prob-8-fig-2.pdf}
+\end{center}
+
+\begin{subproof}
+这里只证明 (iv) 和 (i) 可以推出 (ii) 和 (iii).
+设 $\alpha = \angle AXP, \beta=\angle BXP$, 由 (iv) 知
+\begin{equation}
+\label{eq11}
+\frac{PA}{PB} = \frac{XA\sin\alpha}{XB\sin\beta}, \quad
+\frac{QA}{QB} = \frac{XA\sin(90^\circ + \alpha)}{XB\sin(90^\circ - \beta)}.
+\end{equation}
+再由 (i) 知 $\frac{PA}{PB} = \frac{QA}{QB}$, 所以
+\[
+\sin\alpha\cos\beta=\cos\alpha\sin\beta \iff \sin(\alpha-\beta) = 0.
+\]
+因为 $X$ 不在直线 $\ell$ 上, 所以 $\alpha - \beta < 180^\circ$,
+所以只能是 $\alpha = \beta$.
+(ii) 和 (iv) 推出 (iii) 是显然的.
+\end{subproof}
+
+The result then follows by \cref{lem:harmony-property}.
+\end{soln}

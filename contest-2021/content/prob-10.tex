@@ -1,0 +1,45 @@
+\begin{prob}
+\label{prob:prob-10}
+\addcontentsline{toc}{section}{10. Problem 10}
+已知在 $\triangle ABC, \angle A < \angle B < 90^\circ$.
+圆 $\Gamma$ 过点 $A,B,C$. 圆 $\Gamma$ 过点 $A,C$ 的两条切线交于 $P$.
+直线 $AB$ 与 $PC$ 交于 $Q$.
+若三角形 $ACP, ABC, BQC$ 有相同的面积,
+求证 $\angle BCA = 90^\circ$.
+\end{prob}
+
+\begin{center}
+\includegraphics{prob-10.pdf}
+\end{center}
+
+\begin{soln}
+我们用 $[XYZ]$ 表示 $\triangle XYZ$ 的面积. 我们有
+\begin{equation}
+\label{eq13}
+\begin{aligned}
+\angle PCA&=\angle PAC=\angle B,\\
+\angle CPA&=180^\circ - 2\angle B,\\
+\angle CQB&=180^\circ - \angle CPA-\angle BAP = \angle B - \angle A,\\
+\angle QCB&=\angle A.
+\end{aligned}
+\end{equation}
+因为 $[CQB] = [ACB]$, 且它们的高相等,
+所以 $QB = c$. 因为 $QC$ 是切线,
+所以 $QC^2 = QB\cdot QA \implies QC =\sqrt{2}c$.
+由 $\triangle QCB \sim \triangle QAC$ 我们还可得出 $b = \sqrt{2}a$.
+注意到
+\[
+\frac{1}{2}BA\cdot BC\cdot \sin\angle B = [ACB]
+= [APC] = \frac{1}{2}CA\cdot CP\cdot \sin \angle B,
+\]
+this implies that
+\[
+PA = PC = \frac{ac}{b} = \frac{c}{\sqrt{2}}.
+\]
+另一方面, 我们还有
+\[
+\cos\angle B = \frac{\frac{1}{2}AC}{CP} =
+\frac{b}{\sqrt{2}c} = \frac{a}{c}.
+\]
+这就证明了 $\angle BCA = 90^\circ$.
+\end{soln}

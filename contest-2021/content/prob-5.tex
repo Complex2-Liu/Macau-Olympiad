@@ -1,0 +1,44 @@
+\begin{prob}
+\label{prob:prob-5}
+\addcontentsline{toc}{section}{5. Problem 5}
+\begin{enumerate}[label=(\roman*)]
+\item 设 $x,y,z$ 为正数, 求证 $x^{x-y}y^{y-z}z^{z-x} \ge 1$.
+\item 设 $a,b,c$ 为正数, 求证 $a^4 + b^4 + c^4 \ge a^2bc + ab^2c + abc^2$.
+\end{enumerate}
+\end{prob}
+
+\begin{soln}
+(i) 不妨设 $x=\min\{x,y,z\}, y=x+a, z=x+b$, 其中 $a,b \ge 0$.
+问题归结为
+\begin{equation}
+\label{eq6}
+1 \le x^{-a}(x+a)^{a-b}(x+b)^b =
+\left(\frac{x+a}{x}\right)^a\left(\frac{x+b}{x+a}\right)^b =
+\left(\frac{x+a}{x}\right)^{a-b}\left(\frac{x+b}{x}\right)^b.
+\end{equation}
+容易看出, 无论 $a \ge b$ 还是 $a \le b$, \cref{eq6} 都成立.
+
+(ii) 非常容易就能凑出来的局部:
+\begin{equation}
+\label{eq7}
+a^4 + a^4 + b^4 + c^4 \ge 4a^2bc.
+\end{equation}
+\end{soln}
+
+\begin{rem*}
+(i) 做不等式的时候, 我们一定要搞清楚它到底是\chinesebf{轮换}的还是\chinesebf{对称}的.
+对于对称的不等式, 我们可以直接不妨排好一个序 $x \ge y \ge z$;
+对于轮换的不等式, 我们只能不妨假设其中某个变量是最小值或最大值.
+
+(ii) 事实上这就是熟知的 Muirhead's inequality.
+不过既然作为考题, 那么肯定就是考你用 AM-GM 不等式\footnote{你应该知道
+Muirhead's Inequality 是由 AM-GM 不等式推出来的,
+或者说 Muirhead's Inequality 实质上就是 AM-GM 不等式的推广}来证明这个特殊情形
+($(4,0,0)$ 优于 $(2,1,1)$) 的 Muirhead's inequality,
+而不是让你直接一句话
+As $(4,0,0)$ majorizes $(2,1,1)$, the result then follows by Muirhead's inequality 秒杀.
+注意 Muirhead's Inequality 的条件是\chinesebf{对称}不等式,
+一个常见的错误理解是: 由 Muirhead's Inequality 知 $a^3 + b^3 + c^3 \ge a^2b + b^2c + c^2a$.
+\end{rem*}
+
+\newpage
