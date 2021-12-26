@@ -1,1 +1,13 @@
 *.pdf
+*.aux
+*.bbl
+*.out
+*.fdb_latexmk
+*.log
+*.xdv
+*.fls
+*.synctex.gz
+*.toc
+*.jpg
+*.jpeg
+*.png
