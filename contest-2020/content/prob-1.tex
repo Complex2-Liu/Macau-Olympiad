@@ -1,0 +1,24 @@
+\begin{prob}
+\label{prob:prob-1}
+\addcontentsline{toc}{section}{1. Problem 1}
+5 位朋友各有一枚金币, 他们同时把自己唯一的一枚金币送予其他四位朋友之一,
+当完成交换金币后这称之为一种操作.
+问: 有多少种不同的操作使得操作后这 5 位朋友各仍有一枚金币?
+\end{prob}
+
+\begin{soln}
+一种操作相当于一个映射
+$\varphi: \{1,2,3,4,5\} \to \{1,2,3,4,5\}$,
+第 $i$ 位朋友将自己的金币送予第 $\varphi(i)$ 位朋友.
+条件仍各有一枚金币即 $\varphi$ 是一个排列 (双射),
+条件送予其他四位朋友之一即 $\varphi(i) \ne i$ (没有不动点).
+问题归结为错排公式 (c.f. \cite{derangement})
+\[
+D_n = n!\sum_{i=0}^n \frac{(-1)^i}{i!}.
+\]
+令 $n = 5$, 答案为 $\boxed{44.}$
+\end{soln}
+
+\begin{rem*}
+注意到 $4! = 24, 5! = 120$, 所以刚好不能穷举.
+\end{rem*}

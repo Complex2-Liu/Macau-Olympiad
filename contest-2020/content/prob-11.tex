@@ -1,0 +1,21 @@
+\begin{prob}
+\label{prob:prob-11}
+\addcontentsline{toc}{section}{11. Problem 11}
+记 $2^{2020} \times 5^{2019} \times 9^{2018} =
+\cdots a_{2020}a_{2019}a_{2018}\cdots a_1 a_0$ 为十进制表示,
+其中数码 $a_i$ 为 $0, 1, \cdots, 8, 9$ 之一.
+求 $a_{2020} + a_{2021}$.
+\end{prob}
+
+\begin{soln}
+$2^{2019}\times 5^{2019}$ 贡献了 $2019$ 个 $0$.
+我们要求 $2 \times 9^{2018}$ mod $1000$ 的余数.
+因为 $\gcd(9,1000) = 1, \phi(1000) =
+1000\times (1 - \frac{1}{2})\times (1 - \frac{1}{5}) = 400$,
+所以 $2 \times 9^{2018} \equiv 2\times 9^{18} \equiv 242 \mod 1000$.
+答案为 $2 + 4 = \boxed{6.}$
+\end{soln}
+
+\begin{rem*}
+硬算 $9^{18} \mod 1000$, 这是在恶心人吗?
+\end{rem*}

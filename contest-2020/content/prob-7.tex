@@ -1,0 +1,28 @@
+\begin{prob}
+\label{prob:prob-7}
+\addcontentsline{toc}{section}{7. Problem 7}
+若 $A,B,C,D$ 是实数使得 $\frac{6x^3 + 10x}{x^4 + x^2 + 1} =
+\frac{Ax + B}{x^2 + x + 1} + \frac{Cx + D}{x^2 - x + 1}$ 是恒等式,
+求 $A + B + 3C + 3D$.
+\choices{2}{4}{8}{16}{\text{以上皆非.}}
+\end{prob}
+
+\begin{soln}
+待定系数法
+\[
+\begin{cases}
+A + C         &=6\\
+-A + B + C + D&=0\\
+A - B + C + D &=10\\
+B + D         &=0
+\end{cases}
+\implies
+\begin{cases}
+A &=3\\
+B &=-2\\
+C &=3\\
+D &=2
+\end{cases}.
+\]
+所以 $A+B+3C+3D = 3-2+9+6 = 16,$ 答案是 $\boxed{\textbf{D}.}$
+\end{soln}

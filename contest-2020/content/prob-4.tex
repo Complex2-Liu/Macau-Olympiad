@@ -1,0 +1,34 @@
+\begin{prob}
+\label{prob:prob-4}
+\addcontentsline{toc}{section}{4. Problem 4}
+如图所示 $ABCD$ 为圆内接四边形, $\odot I_1$ 和 $\odot I_2$
+分别是 $\triangle ABC$ 和 $\triangle ADC$ 的内切圆.
+若 $\angle BAC = \angle DAC$,
+求证 $\odot I_1$ 与 $\odot I_2$ 的某一条外公切线与 $BD$ 平行.
+\end{prob}
+
+
+\begin{soln}
+如图, 作 $\angle ACB, \angle ACD$ 的角平分线,
+分别交外接圆于 $F, E$, 交 $AB, AD$ 于 $U, V$.
+设 $I$ 是 $\triangle ABD$ 的内心,
+then it is well-known that $I$ 是 $\triangle CEF$ 的垂心,
+并且 $A, B, D$ 分别是 $I$ 关于 $EF, FC, CE$ 的反射 (reflection).
+由此便推出 $IU, IV$ 分别是 $\odot I_1, \odot I_2$ 的切线.
+
+\begin{center}
+\includegraphics{prob-4.pdf}
+\end{center}
+
+导角
+\[
+\angle FIU + \angle EIV = \angle FBA + \angle EDA
+= \angle FCE = 180^\circ - \angle FIE
+\]
+便知 $U, I, V$ 三点共线. 最后,
+注意到
+\[
+\angle ABD + \angle BUI = \angle ABD + 2 \angle BUC = 180^\circ,
+\]
+所以 $UV$ 平行于 $BD$.
+\end{soln}

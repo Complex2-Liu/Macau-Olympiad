@@ -1,0 +1,37 @@
+\begin{prob}
+\label{prob:prob-5}
+\addcontentsline{toc}{section}{5. Problem 5}
+\begin{enumerate}[label={\normalfont(\alph*)}]
+\item 试求四个连续正整数使得最大数的立方是其余三个数的立方之和.
+\item  求满足 $x^3 + y^3 + 3xy = 1$ 的所有整数对 $(x,y)$.
+\end{enumerate}
+\end{prob}
+
+\begin{soln}
+(a) 设这四个数为 $a, a+1, a+2, a+3$,
+我们有 $(a+3)^3 = a^3 + (a+1)^3 + (a+2)^3 \implies
+0 = a^3 - 6a - 9 = (a-3)(a^2 + 3a + 3)$.
+所以答案是 $\boxed{3,4,5,6.}$
+
+\bigskip
+
+(b) 若 $xy = 0$, 则只可能是 $(x,y) = (1,0), (0,1)$.
+
+\bigskip
+
+若 $xy > 0$, 则必有 $x,y < 0$, 不妨假设 $x \le y$.
+若 $\abs{x} \ge 3$, 则 $x^3 + 3xy < 0$, 矛盾, 所以必须是 $\abs{x} \ge 2$.
+容易验证 $(-2,-2), (-2,-1), (-1,-2)$ 都不是解.
+
+\bigskip
+
+若 $xy < 0$, 不妨设 $y < 0$, 用 $y = -z$ 换元得 $x^3 - z^3 - 3xz = 1$,
+其中 $x > z > 0$. 注意到
+\[x^3 - z^3 - 3xz = (x-z)(x^2 + xz + z^2) - 3xz = (x-z-3)xz + (x-z)(x^2 + z^2).\]
+于是必有 $x - z < 3$.
+若 $x - z = 2$, 则有 $1 = 2(x^2 + z^2) - xz =
+2((z+2)^2 + z^2) - (z+2)z \implies 3z^2 + 6z + 7 = 0$, 无解.
+若 $x - z = 1$, 容易验证此时 $(x,z) = (t+1,t)$ 对任意非零整数 $t$ 都是解.
+
+综上, 所有的整数解为 $\boxed{(t+1,-t), (-t,t+1), t \in \ZZ_{\ge 0}.}$
+\end{soln}

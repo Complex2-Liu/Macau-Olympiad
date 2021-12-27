@@ -1,0 +1,22 @@
+\begin{prob}
+\label{prob:prob-15}
+\addcontentsline{toc}{section}{15. Problem 15}
+设 $M(b,c)$ 为函数 $\abs{2x^2 + bx + c}$ 在闭区间 $[0,2]$ 上的最大值.
+试求 $M(b,c)$ 的最小值 $m$, 其中 $b,c$ 走遍所有实数.
+\end{prob}
+
+\begin{soln}
+$\abs{2x^2 + bx + c} = \abs{2(x + \frac{b}{4})^2 + c - \frac{b^2}{8}}$.
+我们有
+\begin{equation}
+\label{eq2}
+\max\{\abs{A},\abs{B}\} \ge \frac{1}{2}\abs{A-B}.
+\end{equation}
+当 $b > 0$ 或 $b < -8$ 时, $M(b,c) = \max\{\abs{c}, \abs{8+2b+c}\}$,
+由 \cref{eq2} 知此时 $M(b,c) \ge \frac{1}{2}\abs{8+2b} > 4$.
+当 $-4 \le b \le 0$ 时, $M(b,c) = \max\{\abs{8+2b+c},\abs{c-\frac{b^2}{8}}\}$,
+由 \cref{eq2} 知此时 $M(b,c) \ge \frac{1}{2}\cdot \abs{\frac{1}{8}(b+8)^2} \ge 1$.
+当 $-8\le b \le -4$ 时, $M(b,c) = \max\{\abs{c}, \abs{c-\frac{b^2}{8}}\}$,
+由 \cref{eq2} 知此时 $M(b,c) \ge \frac{1}{2}\cdot \abs{\frac{b^2}{8}} \ge 1$.
+显然当 $(b,c) = (-4,1)$ 时 $M(b,c) = 1$, 所以答案是 $\boxed{m = 1.}$
+\end{soln}

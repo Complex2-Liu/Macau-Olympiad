@@ -1,0 +1,19 @@
+\begin{prob}
+\label{prob:prob-8}
+\addcontentsline{toc}{section}{8. Problem 8}
+正实数 $a, b, c$ 满足 $abc = 1$,
+求 $\frac{1}{ab+a+1} + \frac{1}{bc+b+1} + \frac{1}{ca+c+1}$.
+\choices{-1}{0}{1}{2}{\text{以上皆非.}}
+\end{prob}
+
+\begin{soln}
+注意到
+\[
+\frac{1}{ab+a+1} = \frac{c}{1+ac+c} = \frac{bc}{b+1+bc},
+\]
+于是
+\[
+3 = \cycsum \frac{1+a+ab}{1+a+ab} = 3 \cycsum \frac{1}{ab+a+1}.
+\]
+所以答案是 $\boxed{\textbf{C}.}$
+\end{soln}

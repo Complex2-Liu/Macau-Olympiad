@@ -1,0 +1,83 @@
+\documentclass[10pt]{article}
+% document information
+\def\doctitle{2020 年校际数学比赛参考解答}
+%\def\docauthor{Author}
+\def\docdate{Feburary, 2021}
+%\def\docemail{Email}
+%\def\docmotto{One cannot turn back the hands of time.}
+%\def\doctoc{false} % disable table of content
+\def\doctoc{true}
+
+%\usepackage{complex2}
+\usepackage[draft]{complex2}
+\newcommand{\cycsum}{\sum_{\mathrm{cyc}}}
+\newcommand{\choices}[5]{\par $\hspace*{12pt} \textbf{A.}\ #1 \hfill \textbf{B.}\ #2 \hfill \textbf{C.}\ #3 \hfill \textbf{D.}\ #4 \hfill \textbf{E.}\ #5 \hspace*{12pt}$}
+\fancyhead[L]{\doctitle}
+\fancyhead[R]{\url{www.complex2math.com}, Last updated at 2021-12-27}
+
+\begin{document}
+
+\input{~/texmf/titlepage.tex}
+
+\phantomsection
+\addcontentsline{toc}{section}{0. Preface}
+\section*{Preface}
+
+此卷共有 16 题, 其中题 1-5 是证明题, 每题 \textbf{15} 分,
+必须写出完整的计算或证明; 题 6-9 是选择题, 每题 \textbf{5} 分,
+只需在方格填写英文字母 A, B, C, D, E; 题 10-16 是填空题,
+每题 \textbf{8} 分, 只需填写正确答案, 不需填写过程.
+
+\bigskip
+
+Please check \url{https://complex2math.com/blog/macmo-2020-release/} for any update.
+
+\newpage
+
+\input{content/prob-1.tex}
+
+\input{content/prob-2.tex}
+
+\input{content/prob-3.tex}
+
+\input{content/prob-4.tex}
+
+\input{content/prob-5.tex}
+
+\input{content/prob-6.tex}
+
+\input{content/prob-7.tex}
+
+\input{content/prob-8.tex}
+
+\input{content/prob-9.tex}
+
+\input{content/prob-10.tex}
+
+\input{content/prob-11.tex}
+
+\input{content/prob-12.tex}
+
+\input{content/prob-13.tex}
+
+\input{content/prob-14.tex}
+
+\input{content/prob-15.tex}
+
+\input{content/prob-16.tex}
+
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{99}
+\bibitem{derangement}
+Derangement, 错排公式.
+\url{https://en.wikipedia.org/wiki/Derangement}.
+\bibitem{sosmethod}
+Pham Kim Hung.
+S.O.S Theorem.
+\url{https://artofproblemsolving.com/community/c6h80127}.
+\end{thebibliography}
+
+\end{document}

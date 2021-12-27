@@ -1,0 +1,73 @@
+\begin{prob}
+\label{prob:prob-3}
+\addcontentsline{toc}{section}{3. Problem 3}
+设 $a,b,c$ 为正数且满足 $a + b + c = 2$. 求证:
+\[
+\frac{(a-1)^2}{b} + \frac{(b-1)^2}{c} + \frac{(c-1)^2}{a} \ge
+\frac{1}{4}\left(\frac{a^2+b^2}{a+b} + \frac{b^2+c^2}{b+c} + \frac{c^2+a^2}{c+a}\right).
+\]
+\end{prob}
+
+\begin{soln}
+首先注意到右边是对称的, 但左边只是轮换的.
+我们希望把轮换的变成对称的. 利用 $a + b + c = 2$ 我们有
+\begin{align*}
+\text{LHS} &= \cycsum \frac{a^2 - 2a +1}{b}
+            = \cycsum \frac{a^2 - (a+b+c)a + 1}{b}\\
+           &= \cycsum \frac{-ab-ac+1}{b}
+            = \cycsum \left(-a - \frac{ac}{b} + \frac{1}{b}\right)\\
+           &= -\cycsum a - \cycsum \frac{ac}{b} + \cycsum \frac{(a+b+c)^2}{4b}\\
+           &=\frac{1}{4}\cycsum\frac{a^2+c^2}{b} +
+             \frac{1}{4}\cycsum b - \frac{1}{4}\cycsum \frac{2ac}{b}\\
+           &= \frac{1}{4}\cycsum \frac{(a-c)^2}{b} + \frac{1}{4}\cycsum b.
+\end{align*}
+其次我们还有
+\begin{align*}
+\cycsum \left(b - \frac{a^2+b^2}{a+b}\right)
+&= \cycsum \left(b - (a+b) + \frac{2ab}{a+b}\right)\\
+&= \cycsum \left(-\frac{a+b}{2}+\frac{2ab}{a+b}\right)\\
+&= \cycsum -\frac{1}{2(a+b)}(a-b)^2.
+\end{align*}
+于是, 问题归结于证明
+\begin{equation}
+\label{eq:sos}
+\cycsum \left(\frac{1}{a} - \frac{1}{2(b+c)}\right)(b-c)^2
+=: \cycsum S_a(b-c)^2 \ge 0.
+\end{equation}
+这正是 S.O.S 标准形式.
+
+\begin{thm}[S.O.S]
+\label{thm:sos}
+Consider the expression
+\[
+S = f(a,b,c) = S_a(b-c)^2 + S_b(c-a)^2 + S_c(a-b)^2,
+\]
+where $S_a, S_b, S_c$ are functions of $a,b,c$.
+Then $S \ge 0$ if any of the following take place:
+\begin{enumerate}[label={\normalfont(\roman*)}]
+\item $S_a, S_b, S_c \ge 0$.
+\item $a \ge b \ge c$ and $S_b, S_b + S_c, S_b + S_a \ge 0$.
+\item $a \ge b \ge c$ and $S_a, S_c, S_a + 2S_b, S_c + 2S_b$.
+\item $a \ge b \ge c$ and $S_b, S_c \ge 0, a^2S_b + b^2S_a \ge 0$.
+\item $S_a + S_b + S_c \ge 0$ and $S_aS_b + S_bS_c + S_cS_a \ge 0$.
+\end{enumerate}
+\end{thm}
+
+\begin{subproof}
+See \cite{sosmethod}.
+\end{subproof}
+
+因为 \cref{eq:sos} 是对称的, 我们可以不妨假设 $a \ge b \ge c > 0$.
+显然 $S_b, S_c \ge 0$, 最后再注意到
+\[
+S_b + S_a = \left(\frac{1}{a} - \frac{1}{2(c+a)}\right) +
+\left(\frac{1}{b} - \frac{1}{2(b+c)}\right) \ge 0.
+\]
+Then we are done by part (ii) of \cref{thm:sos}.
+\end{soln}
+
+\begin{rem*}
+这道题花了我最久的时间, 可能是因为我不等式太菜了.
+一开始觉得不会很难估计能轻松凑个局部出来, 结果根本凑不动,
+各种代数变形后阴差阳错得到了一个 S.O.S 形式.
+\end{rem*}
