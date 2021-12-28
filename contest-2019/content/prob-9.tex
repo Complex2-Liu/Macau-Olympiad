@@ -1,0 +1,19 @@
+\begin{prob}
+\label{prob:prob-9}
+\addcontentsline{toc}{section}{9. Problem 9}
+试求最小的正整数 $n$, 使得在任意 $n$ 个不同的整数中必存在
+$3$ 个 $a < b < c$ 且 $3 \mid (ab + bc + ca)$.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{6.}$ 用 $x_0, x_1, x_2$ 分别表示
+$n$ 个不同的整数里模 $3$ 余 $0, 1, 2$ 的个数.
+若 $x_0 \ge 2$, 则取其中两个数为 $3$ 的倍数, 剩下一个数任取即可.
+如果 $x_1 \ge 3$ 或 $x_2 \ge 3$, 则取 $a, b, c$ 使得它们模 $3$ 同余即可.
+当 $n \ge 6$ 时, $x_0 \ge 2, x_1 \ge 3, x_2 \ge 3$ 三者当中必有之一成立.
+
+\bigskip
+
+当 $n = 5$ 时, 考虑 $A = \{0, 1, 2, 4, 5\}$,
+容易验证 $A$ 中任意 $3$ 个数 $a < b < c$ 都不满足 $3 \mid (ab + bc + ca)$.
+\end{soln}

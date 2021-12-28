@@ -1,0 +1,34 @@
+\begin{prob}
+\label{prob:prob-14}
+\addcontentsline{toc}{section}{14. Problem 14}
+已知平面上的 $2019$ 个点分别染为红色或蓝色,
+使得以任一蓝点为中心的单位圆周上恰有两个红点.
+试求蓝点个数的最大值, 并说明理由.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{1974.}$ 显然红点个数至少有两个, 任取两个红点 $r_i, r_j$,
+分别作为中心作单位圆 $C_i, C_j$, 如果 $C_i, C_j$ 有交点,
+且交点是蓝点 $b_k, b_l$, 定义 $f(c_i, c_j) = \{b_k, b_l\}$ (可以是 $k = l$),
+否则定义 $f(c_i, c_j) = \varnothing$. 设
+\[
+X := \{(c_i,c_j): \text{$c_i,c_j$ 是红点且 $i < j$}\}.
+\]
+在题目的假定下, 当 $(i,j) \ne (s,t)$ 时,
+$f(c_i,c_j) \cap f(c_s, c_t) = \varnothing$,
+所以 $f$ 是 $X$ 上的单射, 于是 $f$ 的 image 包含至多
+$2\times\binom{m}{2} = m(m-1)$ 个不同的蓝点, 其中$m = \text{红点个数}$.
+所以我们得到不等式约束
+\[
+m(m-1) \ge 2019 - m \implies m \ge 45.
+\]
+即蓝点个数至多为 $2019 - 45 = 1974$.
+蓝点个数达到 $1974$ 的构造如下:
+
+\begin{center}
+\includegraphics{prob-14.pdf}
+\end{center}
+
+只需让 $45$ 个红点均匀的等分在 $x$ 轴上的 $(0, 1)$ 区间里,
+就能保证这 $45$ 个单位圆相交得到 $45 \times 44 = 1980$ 个不同的点.
+\end{soln}

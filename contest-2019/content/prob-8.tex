@@ -1,0 +1,24 @@
+\begin{prob}
+\label{prob:prob-8}
+\addcontentsline{toc}{section}{8. Problem 8}
+列出满足以下方程的所有正整数对 $(x, y): \qquad (x,y) = $
+\[
+x^{2^x} = y^{512^y}.
+\]
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{(1, 1), (16, 2).}$ 方程等价于
+\[
+x^{2^x} = y^{2^{9y}}.
+\]
+于是 $(x, y)$ 必须满足 $2^x < 2^{9y}$ 且 $9y > x > y$.
+若 $(x,y) \ne (1,1)$, 设 $p^n || x, p^m || y$, 其中 $p$ 素,
+我们有 $n\cdot 2^x = m\cdot 2^{9y} \implies \frac{n}{m} = \frac{2^{9y}}{2^x} =: t$
+which is a fixed value for all $p$ such that $p \divides x, y$.
+因此 $x = y^t$ where $t$ is a power of $2$,
+从 $9y > x = y^t$ 推出 $t = 2$ 或 $t = 4$.
+当 $t = 2$ 时, 从 $t = 2^{9y - y^t}$ 得 $9y - y^2 = 1$,
+方程无正整数解. 当 $t = 4$ 时, 要求 $9y - y^4 = 2$,
+方程有唯一正整数解 $y = 2$, 此时$ x = 16$.
+\end{soln}

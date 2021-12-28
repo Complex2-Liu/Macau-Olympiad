@@ -1,0 +1,21 @@
+\begin{prob}
+\label{prob:prob-11}
+\addcontentsline{toc}{section}{11. Problem 11}
+确定正整数 $S$ 的个位数, 并说明理由.
+\[
+S = (2 + \sqrt{3})^{2019} + (2 - \sqrt{3})^{2019}.
+\]
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{2.}$ 设$x = 2 + \sqrt{3}, y = 2 - \sqrt{3}$,
+则 $x + y = 4, xy = 1$,
+\[
+h_n := x^n + y^n = (x^{n-1} + y^{n-1})(x+y) - xy(x^{n-2} + y^{n-2})
+     = 4h_{n-1} - h_{n-2},
+\]
+其中 $h_1 = 4, h_2 = (x + y)^2 - 2xy = 14$.
+令 $a_n = h_n \bmod 10$, 我们有 $a_1 = 4, a_2 = 4, a_3 = 2$,
+$a_4 = 4, a_5 = 4, a_6 = 2, \cdots$.
+可见 $(a_n)_{n\ge 1}$ 以 $3$ 为周期, $a_{2019} = a_{3} = 2$.
+\end{soln}

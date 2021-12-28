@@ -1,0 +1,36 @@
+\begin{prob}
+\label{prob:prob-13}
+\addcontentsline{toc}{section}{13. Problem 13}
+如图 $\odot O$ 是 $\triangle ABC$ 的旁切圆, 切点为 $D, E, F$.
+若 $R$ 是 $\odot O$ 的半径, 求证:
+\[
+\frac{2R}{BC} \le \frac{1 + \sin(\angle A/2)}{\cos(\angle A/2)}.
+\]
+\end{prob}
+
+\begin{soln}
+我们只需证
+\[
+\frac{BC}{2R}\ge \frac{\cos(\angle A/2)}{1+\sin(\angle A/2)}.
+\]
+注意到我们有
+\[
+\frac{BC}{2R} = \frac{BD}{2OD} + \frac{CD}{2OD} =
+\frac{1}{2}(\tan(\angle B/2) + \tan(\angle C/2)) =
+\frac{1}{2}\frac{\sin(\angle B/2 + \angle C/2)}{\cos(\angle B/2)\cos(\angle C/2)},
+\]
+\begin{center}
+\includegraphics{prob-13.pdf}
+\end{center}
+以及, 因为 $\frac{1}{2}(\angle A + \angle B + \angle C) = 90^\circ$, 所以
+\[
+\frac{\cos(\angle A/2)}{1 + \sin(\angle A/2)} =
+\frac{\sin(\angle B/2 + \angle C/2)}{1 + \cos(\angle B/2 + \angle C/2)}.
+\]
+所以只需证
+\[
+1 + \cos(\angle B/2 + \angle C/2) \ge 2\cos(\angle B/2)\cos(\angle C/2).
+\]
+化简上式得 $1 \ge \cos(\angle B/2)\cos(\angle C/2) +
+\sin(\angle B/2)\sin(\angle C/2) = \cos(\angle B/2 - \angle C/2)$.
+\end{soln}

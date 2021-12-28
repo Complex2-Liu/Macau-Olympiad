@@ -1,0 +1,62 @@
+\begin{prob}
+\label{prob:prob-5}
+\addcontentsline{toc}{section}{5. Problem 5}
+设 $A(0,4), B(2,2)$ 为椭圆 $E: \frac{x^2}{9} + \frac{y^2}{25} = 1$ 内的两点,
+$M$ 为椭圆 $E$ 上的任一点.
+记 $m$ 为 $\abs{AM} + \abs{MB}$ 的最小值, 则 $m = $
+\end{prob}
+
+\begin{soln}
+我们先证明下述引理:
+
+\begin{lem}
+\label{lem:lem-1}
+设 $F_1, F_2$ 为椭圆 $E$ 的两个焦点,
+$P$ 是椭圆上一点, 直线 $\ell_P$ 是过点 $P$ 与椭圆相切的直线,
+则 $\ell_P$ 是 $\angle F_1PF_2$ 的外角平分线.
+\end{lem}
+
+\begin{center}
+\includegraphics{prob-5-fig-1.pdf}
+\end{center}
+
+\begin{subproof}
+如图, 延长直线 $F_2P$ 至 $L$, 使得 $\abs{PL} = \abs{PF_1}$,
+设 $\omega$ 是 $\angle F_1PF_2$ 的外角平分线,
+我们只需证明对于直线 $\omega$ 上任意一点 $Q \ne P$,
+点 $Q$ 不在椭圆 $E$ 上.
+事实上, 此时 $\omega$ 是 $F_1L$ 的中垂线, 由三角不等式我们有
+\[
+2a = \abs{LF_2} < \abs{QF_2} + \abs{QL} = \abs{QF_2} + \abs{QF_1}.
+\]
+所以 $\ell_P = \omega$.
+\end{subproof}
+
+\begin{center}
+\includegraphics{prob-5-fig-2.pdf}
+\end{center}
+
+回到原题, 注意到点 $A$ 是椭圆 $E$ 的一个焦点,
+设另一个焦点为 $C(0,-4)$. 对固定的常数 $m \in \RR$,
+平面上使得 $\abs{AM} + \abs{MB} = m$
+的点 $M$ 的轨迹是一个以 $A, B$ 为焦点的椭圆 $E_1$.
+由 $m$ 的最小性, $E_1$ 与 $E$ 相切, 设切点为$P$,
+则 $P$ 就是满足 $\abs{AM} + \abs{MB}$ 最小的那个点 $M$.
+设过点 $P$ 且与 $E$ 相切的直线为 $\ell_P$,
+注意到 $\ell_P$ 也是椭圆 $E_1$ 的切线
+(因为 $E_1\setminus{P}$ 完全包含在椭圆 $E$ 内),
+由 \cref{lem:lem-1} 知 $\ell_P$ 是 $\angle APC$ 和 $\angle APB$ 的外角平分线,
+所以只能是 $P, B, C$ 三点共线, 于是
+\[
+m = \abs{AP} + \abs{PB} = \abs{AP} + \abs{PC} - \abs{CB} = 10 - 2\sqrt{10}.
+\]
+所以答案是$\boxed{10 - 2\sqrt{10}.}$
+\end{soln}
+
+\begin{rem*}
+直接代入椭圆的参数方程 $x = 3\cos \theta, t = 5\sin \theta$,
+则可将 $m$ 划归成关于 $\theta$ 的函数.
+问题转化为计算这个关于 $\theta$ 的函数的最小值,
+也许真的能暴力算出来但不切实际.
+这里注意到 $A$ 是一个焦点是一个很重要的观察.
+\end{rem*}

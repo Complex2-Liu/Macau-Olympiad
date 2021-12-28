@@ -1,0 +1,45 @@
+\begin{prob}
+\label{prob:prob-6}
+\addcontentsline{toc}{section}{6. Problem 6}
+满足 $P(x)^2 - 1 \equiv 4P(x^2 - 4x + 1)$ 的实系数多项式 $P(x)$ 是
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{P(x)\equiv 2 \pm \sqrt{5}.}$
+若 $\deg P = 0$, 则容易解得此时 $P(x)\equiv 2 \pm \sqrt{5}$.
+下面假设 $\deg P \ge 1$, 设 $Q(t) = P(t + 2)$,
+我们有 $Q(t - 2)^2 - 1 = 4Q(t^2 - 4t - 1)$,
+再令 $x = t - 2$, 得
+\begin{equation}
+\label{eq1}
+Q(x)^2 - 1 = 4Q(x^2 - 5).
+\end{equation}
+容易看出 $Q(x)$ 的首项系数是 $4$. 对上式求导得
+\begin{equation}
+\label{eq2}
+Q(x)Q'(x) = 4Q'(x^2 - 5)x.
+\end{equation}
+设 $a_1 = 0, a_n = \sqrt{5 + a_{n-1}}$ 对于 $n \ge 2$.
+
+\begin{claim}
+所有的 $a_n$ 都不是 $Q(x)$ 的零点.
+\end{claim}
+
+\medskip
+
+反证法, 假如存在 $a_n$ 使得 $Q(a_n) = 0$,
+反复代入 \cref{eq1} 得 $-1 < Q(a_{n-1}) = -\frac{1}{4} < 0$,
+$-1 < Q(a_{n-2}) = \frac{1}{4}(Q(a_{n-1})^2 - 1) < 0$,
+以此类推得 $-1 < Q(a_1) = Q(0) < 0$.
+于是 $-1 < Q(-5) = \frac{1}{4}(Q(0)^2 - 1) < 0$,
+$-1 < Q(20) = \frac{1}{4}(Q(-5)^2 - 1) < 0, -1 < Q(20^2 - 5) < 0$,
+这与 $\lim_{n \to \infty}Q(n) = \infty$ 矛盾.
+特别的, 以上讨论告诉我们$Q(0) \ne 0$.
+
+\bigskip
+
+在 \cref{eq2} 中令 $x = 0$, 得 $Q'(a_1) = 0$,
+在 \cref{eq2} 中令 $x = a_n$, 得 $Q(a_n)Q'(a_n) = 4Q'(a_{n-1})a_n$,
+it follows by induction on $n$ that $Q'(a_n) = 0$ 对所有的 $n = 1, 2, \cdots$ 成立,
+这与多项式只有有限个零点矛盾.
+\end{soln}

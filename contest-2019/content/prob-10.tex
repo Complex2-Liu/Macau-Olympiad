@@ -1,0 +1,23 @@
+\begin{prob}
+\label{prob:prob-10}
+\addcontentsline{toc}{section}{10. Problem 10}
+定义数列 $(u_n)_{n\ge 1}: u_1 = 4$ 及对任意
+$n\ge 1$ 有 $u_{n+1} = 2u_n + \sqrt{3u_n^2 + 1}$.
+求: $S_n = u_{n+2} - 4u_{n+1} + u_n$ 当 $n\ge 1$.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{S_n \equiv 0.}$ 我们有
+\begin{equation}
+\label{eq3}
+u_{n+1}^2 - 4u_{n+1}u_n + u_n^2 = 1.
+\end{equation}
+和
+\begin{equation}
+\label{eq4}
+u_{n+2}^2 - 4u_{n+2}u_{n+1} + u_{n+1}^2 = 1.
+\end{equation}
+从 \cref{eq3} 和 \cref{eq4} 立得 $u_{n+2}, u_{n}$
+为方程 $x^2 - 4u_{n+1}x + u_{n+1}^2 - 1 = 0$ 的两根,
+所以 $u_{n+2} + u_n = 4u_{n+1}$.
+\end{soln}
