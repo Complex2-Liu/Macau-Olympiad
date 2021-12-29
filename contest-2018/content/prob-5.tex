@@ -1,0 +1,16 @@
+\begin{prob}
+\label{prob:prob-5}
+\addcontentsline{toc}{section}{5. Problem 5}
+设 $x, y \in \RR_+$, 问: $A = (x + y)^5$
+和 $B = 12xy(x^3 + y^3)$ 哪个较大?
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{A.}$ 注意到 $B = 12xy(x + y)(x^2 + y^2 - xy)$,
+因为 $x, y$ 都是正的, 所以我们只需证明 $(x+y)^4 \ge 12xy(x^2 + y^2 - xy)$.
+令 $a = x + y, b = xy$, 我们只需证明
+\[
+a^4 - 12ba^2 + 36b^2 \ge 0.
+\]
+这由 AM-GM 不等式显然.
+\end{soln}

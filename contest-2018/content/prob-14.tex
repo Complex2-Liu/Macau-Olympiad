@@ -1,0 +1,23 @@
+\begin{prob}
+\label{prob:prob-14}
+\addcontentsline{toc}{section}{14. Problem 14}
+已知 $a_1, a_2, \cdots, a_n$ 为正实数, 且满足 $a_1 + a_2 + \cdots + a_n = 1$.
+试求以下式子的最小值:
+\[
+\frac{a_1^3}{a_1^2 + a_2a_3} + \frac{a_2^3}{a_2^2 + a_3a_4} + \cdots
++ \frac{a_{n-1}^3}{a_{n-1}^2 + a_na_1} + \frac{a_n^3}{a_n^2 + a_1a_2}.
+\]
+\end{prob}
+
+\begin{soln}
+记表达式为 $S$, 令 $a_1 = a_2 = \cdots = a_n = \frac{1}{n}$
+得到 $S = \frac{1}{2}$, 下面我们证明 $S \ge \boxed{\tfrac{1}{2}.}$
+只需要利用 AM-GM 不等式,
+\[
+S = \sum_{i=1}^n \frac{a_i^3}{a_i^2 + a_{i+1}a_{i+2}}
+  = \sum_{i=1}^n \left(a_i - \frac{a_ia_{i+1}a_{i+2}}{a_i^2 + a_{i+1}a_{i+2}}\right)
+  \ge 1 - \sum_{i=1}^n \frac{\sqrt{a_{i+1}a_{i+2}}}{2}
+  \ge 1 - \sum_{i=1}^n \frac{a_{i+1} + a_{i+2}}{4}
+  = \frac{1}{2}.
+\]
+\end{soln}

@@ -1,0 +1,41 @@
+\begin{prob}
+\label{prob:prob-6}
+\addcontentsline{toc}{section}{6. Problem 6}
+已知 $y_1, y_2, y_3$ 为方程 $y^3 + py + q = 0$ 的互异复数根.
+令 $\alpha = e^{\frac{2\pi i}{3}} = \frac{-1 + \sqrt{-3}}{2}$.
+定义 $u = y_1 + \alpha y_2 + \alpha^2 y_3$ 及
+$v = y_1 + \alpha^2 y_2 + \alpha y_3$.
+试用 $p, q$ 来表示 $uv, u^3 + v^3$.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{uv = -3p, u + v = -27q.}$
+利用三次单位根的性质: $\alpha^3 = 1$ 和 $\alpha^2 + \alpha + 1 = 0$,
+我们有
+\begin{align*}
+u + v     &= 2y_1 - y_2 - y_3\\
+uv        &= y_1^2 +y_2^2 +y_3^2 - y_1y_2 - y_1y_3 - y_2y_3\\
+u^3 + v^3 &= 2(y_1^3 + y_2^3 + y_3^3) - 3\sum_{\text{sym}}y_1^2y_2 + 12y_1y_2y_3.
+\end{align*}
+再利用根与系数的关系:
+\[
+y_1 + y_2 + y_3 = 0, \quad
+y_1y_2 + y_1y_3 + y_2y_3 = p, \quad
+y_1y_2y_3 = -q,
+\]
+即得
+\[
+uv = (y_1+y_2+y_3)^2 - 3(y_1y_2 + y_1y_3 + y_2y_3) = -3p.
+\]
+我们有
+\[
+u^3 + v^3 = 2(y_1 + y_2 + y_3)^3 - 9\sum_{\text{sym}}y_1^2y_2
+          = -9\sum_{\text{sym}}y_1^2y_2.
+\]
+另一方面, 我们有
+\[
+0 = (y_1 + y_2 + y_3)(y_1y_2 + y_2y_3 + y_3y_1)
+  = \sum_{\text{sym}}y_1^2y_2 + 3y_1y_2y_3
+  \implies -9\sum_{\text{sym}}y_1^2y_2 = -27q.
+\]
+\end{soln}

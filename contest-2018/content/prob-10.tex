@@ -1,0 +1,22 @@
+\begin{prob}
+\label{prob:prob-10}
+\addcontentsline{toc}{section}{10. Problem 10}
+设在图 $G$ 中各顶点的度至少是 $\delta > 0$,
+求证: 存在一条路径长度至少为 $\delta + 1$.\\
+注: 我们不会定义图, 顶点, 度及路径.
+\footnote{意思就是说题目不会告诉你图, 顶点, 度及路径的定义.
+如果你对图论没有任何了解, 这题就可以直接拉闸了.}
+\end{prob}
+
+\begin{soln}
+假设图中最长路径为 $v_1 \to v_2 \to \cdots \to v_m$.
+由于这条路径已经是最长的路径了, 所以集合
+$N = \{v \in G: \text{$v$ 与 $v_m$ 相邻}\}$ 必须是
+$\{v_1, v_2, \cdots, v_{m-1}\}$ 的子集,
+因此 $m - 1 \ge \abs{N} \ge \delta$.
+\end{soln}
+
+\begin{rem*}
+Optimal assumption, 一开始就取最优的选择,
+然后分析最优的选择会具有怎样的性质.
+\end{rem*}

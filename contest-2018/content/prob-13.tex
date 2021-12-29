@@ -1,0 +1,27 @@
+\begin{prob}
+\label{prob:prob-13}
+\addcontentsline{toc}{section}{13. Problem 13}
+求所有的实系数多项式 $P(x)$,
+使得 $(x + 1)P(x - 1) - (x - 1)P(x)$ 恒为常数.
+\end{prob}
+
+\begin{soln}
+令 $x = 1$ 就知道这个常数为 $2P(0)$, 不妨设 $P(0) = 0$
+(否则我们可以用 $P(x) - P(0)$ 作为新的 $P(x)$).
+则 $0$ 是 $P$ 的根, $P(x) = xQ(x)$, 代入原式得
+\[
+(x - 1)((x + 1)Q(x - 1) - xQ(x)) \equiv 0,
+\]
+this implies that
+\[
+(x + 1)Q(x - 1) = xQ(x) \quad \text{for all $x \ne 1$}.
+\]
+在上式中令 $x = 0$ 得到 $Q(-1) = 0$, 即 $(x + 1)$ 是 $Q$ 的因式.
+设 $Q(x) = (x + 1)R(x)$, 我们有
+\[
+(x + 1)\cdot x \cdot R(x - 1) = x(x + 1)R(x) \quad \text{for all $x \ne 1$}.
+\]
+这推出 $R(1) = R(2) = R(3) = \cdots$,
+从而只能是 $R(x) = a$ 为一常数, 于是 $P(x) = a(x + 1)x + b$,
+其中 $a, b \in \RR$ 任意.
+\end{soln}

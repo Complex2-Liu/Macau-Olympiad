@@ -1,0 +1,103 @@
+\begin{prob}
+\label{prob:prob-3}
+\addcontentsline{toc}{section}{3. Problem 3}
+试求方程 $x(x^2 + x + 1) = -\frac{1}{3}$ 的所有实数解 $x$.
+\end{prob}
+
+居然考三次方程的求根, 有点意思.
+这里我们介绍一下 general 的三次方程求根理论,
+下面的内容选自 \cite{cubic-equation}.
+
+\begin{defin}[depressed cubic form]
+\label{defin:depressed-cubic-form}
+Cubics of the form
+\[
+t^3 + pt + q
+\]
+are said to be \textbf{depressed}.
+\end{defin}
+
+\begin{lem}
+\label{lem:change-to-depressed-form}
+Let $F = ax^3 + bx^2 + cx + d$ be an arbitrary cubic form,
+then we can perform a change of variable after which $F$
+become depressed. Moreover, this change of variable is linear in $x$.
+\end{lem}
+
+\begin{proof}
+$x = t - \frac{b}{3a}$ works.
+\end{proof}
+
+\begin{defin}[Discriminant]
+\label{defin:disc}
+设 $f(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_0$ 为一个\emph{首一}的多项式.
+在 $\CC$ 中 $f(x)$ 分解为一次因式的乘积\footnote{代数基本定理, 这个事实会在复变函数以及拓扑课程中给出证明}
+\[
+f(x) = (x - r_1) \cdots (x - r_n).
+\]
+Then the \textbf{discriminant} of $f(x)$ is defined to be
+\[
+\mathrm{disc}(f) := \prod_{i < j}(r_i - r_j)^2.
+\]
+
+\begin{lem}
+\label{lem:depressed-form-disc}
+The discriminant of depressed cubic form $t^3 + pt + q$ is $-(4p^3 + 27q^2)$.
+\end{lem}
+
+\begin{proof}
+根据 Vieta's formulas $r_1r_2 + r_2r_3 + r_3r_1 = p, r_1r_2r_3 = -q$.
+直接验证
+\[
+(r_1 - r_2)^2(r_2 - r_3)^2(r_3 - r_1)^2 =
+-4(r_1r_2 + r_2r_3 + r_3r_1)^3  - 27(r_1r_2r_3)^2.
+\]
+\end{proof}
+
+\begin{prop}
+\label{prop:nature-of-roots}
+如果 $f(t) = t^3 + pt + q$ 是实系数多项式,
+并且它的 discriminant $\mathrm{disc}(f) \ne 0$
+(这相当于说 $f(t)$ 无重根), 则
+\begin{enumerate}[label={\normalfont(\alph*)}]
+\item $\mathrm{disc}(f) > 0 \implies f(t)$ 有三个不同的实根.
+\item $\mathrm{disc}(f) < 0 \implies f(t)$ 有一个实根和两个互相共轭的复根.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+注意复根必然成对出现. 若 $r_2, r_3$ 是共轭的复根,
+则 $r_2 - r_3$ 是纯虚数, $r_1 - r_2, r_1 - r_3$ 是一对共轭的复数,
+于是 $(r_2 - r_3)^2$ 是负实数, $(r_1 - r_2)(r_1 - r_3)$ 是正实数
+(正是 $r_1 - r_2$ 这个复数的 norm 的平方).
+所以此时 $\mathrm{disc}(f) < 0$.
+\end{proof}
+
+\begin{prop}[Vieta's substitution]
+\label{prop:vieta-substitution}
+The substitution $t = y - \frac{p}{3y}$ transforms the depressed cubic into
+\[
+y^3 + q - \frac{p^3}{27y^3} = 0.
+\]
+Multiplying by $y^3$, one gets a quadratic equation in $z := y^3$
+\[
+z^2 + qz - \frac{p^3}{27} = 0.
+\]
+\end{prop}
+
+\begin{soln}
+原方程为 $x^3 + x^2 + x + \frac{1}{3} = 0$,
+代入 $x = t - \frac{1}{3}$ 得到 depressed form
+$t^3 + \frac{2}{3}t + \frac{2}{27} = 0$.
+再使用 Vieta's substitution $t = y - \frac{2}{9y}$ 得到
+$y^3 + \frac{2}{27} - \frac{8}{729y^3} = 0$.
+最后再令 $z = y^3$, 我们有 $z^2 + \frac{2}{27}z - \frac{8}{729} = 0$,
+解得 $z = \frac{2}{27}$ or $-\frac{4}{27}$, 还原回去便有
+\[
+t  = \frac{2^{\frac{1}{3}} - 2^{\frac{2}{3}}}{3} \implies
+x =  \boxed{\frac{1}{3}(-1 + 2^{\frac{1}{3}} - 2^{\frac{2}{3}}).}
+\]
+事实上, 从 depressed form 的 discriminant
+我们也可以知道只有一个实根 (c.f. \cref{prop:nature-of-roots}).
+\end{soln}
+\end{defin}

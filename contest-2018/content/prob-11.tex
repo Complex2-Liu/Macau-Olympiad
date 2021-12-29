@@ -1,0 +1,53 @@
+\newpage
+
+\begin{prob}
+\label{prob:prob-11}
+\addcontentsline{toc}{section}{11. Problem 11}
+是否存在正数数列 $(a_n)_{n \ge 1}$ 使得对任意的正整数 $n$
+以下两个不等式 (i) 及 (ii) 都成立? 并给出证明.
+\[
+\text{(i)} \quad \sum_{i=1}^n a_i \le n^2 \qquad
+\text{(ii)} \quad \sum_{i=1}^n \frac{1}{a_i}\le 2018.
+\]
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{\text{不存在.}}$ 我们先证明
+
+\begin{lem}[Cauchy 收敛原理]
+存在充分大的 $N$, 使得对 $n \ge N$ 都有
+\[
+\frac{1}{a_{n+1}} + \cdots + \frac{1}{a_{2n}} < \frac{1}{4}.
+\]
+\end{lem}
+
+\begin{subproof}
+假设结论不真, 则我们可以找到
+$1 = n_1 < 2n_1 < n_2 < 2n_2 < n_3 < \cdots$ 使得对任意 $k \in \NN$ 有
+\[
+S_k = \frac{1}{a_{n_k+1}} + \cdots + \frac{1}{a_{2n_k}} \ge \frac{1}{4}.
+\]
+这推出
+\[
+2018 \ge \frac{1}{a_1} + \cdots + \frac{1}{a_{n_{8073}}}
+     \ge S_1 + \cdots + S_{8073}
+     \ge \frac{1}{4} \times 8073 > 2018,
+\]
+与条件 (ii) 矛盾.
+\end{subproof}
+
+回到原题, 利用 Cauchy 不等式我们有
+\[
+\frac{1}{4}(a_1 + \cdots + a_{2n}) > (a_{n+1} + \cdots +a_{2n})
+\left(\frac{1}{a_{n+1}} + \cdots + \frac{1}{a_{2n}}\right) \ge n^2.
+\]
+这与 $\sum_{i=1}^{2n} a_i \le 4n^2$ 矛盾.
+\end{soln}
+
+\begin{rem*}
+本题源自 Balkan Mathematical Olympiad 2008 Problem 2 (c.f. \cite{balkan-2018}),
+我曾经做过, 具有数学分析的味道. 事实上, 如果你学过最基本的数学分析,
+条件 (ii) 即级数收敛, 第一时间就能反应过来使用 Cauchy 收敛原理把
+$\frac{1}{a_{n+1}} + \cdots + \frac{1}{a_m}, m > n$ 给 bound 住,
+剩下的事情也是水到渠成.
+\end{rem*}

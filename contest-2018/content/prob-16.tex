@@ -1,0 +1,48 @@
+\begin{prob}
+\label{prob:prob-16}
+\addcontentsline{toc}{section}{16. Problem 16}
+在锐角三角形 $\triangle ABC (AC \ne BC)$ 中,
+已知 $AE \perp BC$ 于点 $E, BF \perp AC$ 于点 $F$.
+过点 $E, F$ 的圆 $\Gamma$ 且与边 $AB$ 切于点 $D$.
+若 $[ADE] = [BDF]$, 求证: $\angle EDF = \angle ACB$.
+\end{prob}
+
+\begin{soln}
+设 $H$ 为 $\triangle ABC$ 的垂心.
+设 $M$ 为 $AB$ 的中点. 设 $N$ 为 $CH$ 的中点.
+设 $O$ 是 $\triangle ABC$ 的外心, $O'$ 是 $\Gamma$ 的圆心.
+
+\begin{center}
+\includegraphics{prob-16.pdf}
+\end{center}
+
+我们先分析条件 $[ADE] = [BDF]$ 告诉了我们什么信息:
+\[
+\frac{1}{2}AD\cdot AE \cos B = [ADE]
+= [BDF] = \frac{1}{2} BF\cdot BD \cos A.
+\]
+利用 $BF = AB \sin A, AE = AB\sin B$ 可以推出
+\begin{equation}
+\label{eq:6}
+\frac{DA}{DB} = \frac{\sin(\pi - 2A)}{\sin(\pi - 2B)}.
+\end{equation}
+另一方面, 观察 $\triangle AOB$, 我们有
+\begin{equation}
+\label{eq:7}
+\frac{DA}{DB} = \frac{\sin \angle AOD}{\sin \angle BOD}.
+\end{equation}
+注意到 $\angle AOD + \angle BOD = 2 \angle C =
+(\pi - 2\angle A) + (\pi - 2\angle B)$, 结合 \cref{eq:6} and \cref{eq:7}
+便推出 $\angle AOD = \pi - 2A, \angle BOD = \pi - 2B
+\implies \angle MOD = \angle B - \angle A$.
+
+\bigskip
+
+根据 Newton 定理 $M, N, EF$ 的中点三点共线, 由此知
+$M, O', N$ 三点共线 (recall that $N$ is the circumcenter of $C, F, H, E$).
+It is well-known that $OMNC$ is a parallelogram, hence
+$\angle OMO' = \angle OMN = \angle OCN = \angle B - \angle A = \angle MOD$.
+这意味着 $OMDO'$ 是一个矩形 $\implies O'D = OM = CN \implies O'$
+是 $N$ 关于 $EF$ 的 reflection.
+故 $2 \angle ACB = \angle ENF = \angle EO'F = 2 \angle EDF$.
+\end{soln}

@@ -1,0 +1,17 @@
+\begin{prob}
+\label{prob:prob-1}
+\addcontentsline{toc}{section}{1. Problem 1}
+设 $a, b$ 为正实数, 已知抛物线 $y = x^2 - a$ 与 $x = y^2 - b$
+交于四个互异的点 $P_i(x_i,y_i) (i=1,2,3,4)$.
+试确定 $(x_1 + x_2)(x_1 + x_3)(x_1 + x_4)$ 的值.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{1.}$ 将 $y = x^2 - a$ 代入得
+$x^4 - 2ax^2 - x + a^2 - b = 0$.
+于是利用根与系数的关系, 我们有
+\begin{align*}
+(x_1+x_2)(x_1+x_3)(x_1+x_4) &= x_1^2(x_1+x_2+x_3+x_4) + x_1x_2x_3 + x_1x_3x_4 + x_1x_2x_4 + x_2x_3x_4\\
+							              &= x_1^2 \times 0 + 1 = 1.
+\end{align*}
+\end{soln}

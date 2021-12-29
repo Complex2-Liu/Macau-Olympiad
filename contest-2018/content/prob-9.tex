@@ -1,0 +1,31 @@
+\begin{prob}
+\label{prob:prob-9}
+\addcontentsline{toc}{section}{9. Problem 9}
+On a $5 \times 5$ board, A and B take turns in marking squares.
+A starts first. A always marks an $X$ in an empty square,
+and then B always marks $O$ in another empty square.
+No square can be marked twice. A wins if A can make one full row,
+column or diagonal consisting of only $X$'s.
+Can B prevent A from winning? Give a proof.
+\footnote{在中文版试题中, A 胜利的条件是 (在某一行或一列或一条对角线上)
+出现连续的四个 $X$. 这显然是翻译错误.}
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{\text{B能阻止A胜利}.}$ 考虑下表:
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline 5 & 9 & 11 & 9 & 6 \\
+\hline 7 & 1 & 1 & 4 & 8 \\
+\hline 12 & 2 & 0 & 4 & 12 \\
+\hline 7 & 2 & 3 & 3 & 8 \\
+\hline 6 & 10 & 11 & 10 & 5 \\
+\hline
+\end{tabular}
+\caption{B的应对策略}
+\end{table}
+注意到, 对于任意一行, 或一列, 或一条对角线上, 都存在两个不同的方格,
+他们被标记为相同的数字. 每当 A 选择在标记为 $j$ 的方格上标记 $X$ 时,
+B 就在另一个同样标记为 $j$ 的方格上标记 $O$, 这样, B 便可阻止 A 胜利.
+\end{soln}

@@ -1,0 +1,41 @@
+\begin{prob}
+\label{prob:prob-15}
+\addcontentsline{toc}{section}{15. Problem 15}
+某班有 $7$ 名男生和 $13$ 名女生, 在三个月之内每名男生至少要与每名女生交流一次.
+证明: 存在两名男生与两名女生, 这两名男生在同一个月内与这两名女生有过交流.
+\end{prob}
+
+\begin{soln}
+考虑一个二部图 $G \times B$.
+其中 $G = \{g_1, \cdots, g_{13}\}, B = \{b_1, \cdots, b_7\}$ 分别代表女生和男生.
+如果男生 $b_i$ 与女生 $g_j$ 在第 $k$ 月有一次交流,
+我们就用一条颜色为 $k$ 的边连接 $b_i, g_j$.
+由于一共有 $13 \times 7$ 条边, 且一共只有 $3$ 种颜色,
+根据抽屉原理, 存在一种颜色的边的集合 $E$, 使得
+$\abs{E} \ge \ceiling{\frac{13 \times 7}{3}} = 31$.
+现在我们无视其他颜色的边, 只考察集合 $E$ 的所有边.
+问题相当于要我们证明存在 $b_i, b_j, g_u, g_v$
+使得这四点构成完全二部图. 记 $x_i$ 为 $\deg g_i$, 我们有
+$X = \sum_{i=1}^{13} x_i \ge 31$.
+
+\bigskip
+
+考察三元组 $(p, q, r)$ 使得 $b_p, b_q$ 均与 $g_r$ 相邻,
+如果结论不真, 则给定 $p, q$ 至多有一个 $r$ 满足上述条件.
+于是我们得到不等式约束
+\begin{equation}
+\label{eq:5}
+21 = \binom{7}{2} \ge \sum_{i=1}^{13} \binom{x_i}{2}
+   = \frac{1}{2}\left(\sum_{i=1}^{13} x_i^2 - \sum_{i=1}^{13} x_i\right).
+\end{equation}
+再利用 Cauchy 不等式
+\[
+13\sum_{i=1}^{13}x_i^2 \ge \left(\sum_{i=1}^{13} x_i\right)^2 = X^2
+\implies \sum_{i=1}^{13}x_i^2 \ge \frac{X^2}{13}.
+\]
+代入 \cref{eq:5} 中得
+\[
+X^2 - 13X \le 546 \implies X < 31.
+\]
+矛盾.
+\end{soln}

@@ -1,0 +1,17 @@
+\begin{prob}
+\label{prob:prob-4}
+\addcontentsline{toc}{section}{4. Problem 4}
+试确定正整数 $a$ 使得 $a^2 - 3a - 19$ 是 $289$ 的倍数.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{\text{不存在.}}$ 注意到 $289 = 17 \times 17$, 我们有
+\begin{equation}
+\label{eq:1}
+a^2 - 3a - 19 \equiv a^2 - 3a - 17a - 19 + 17 \times 7
+               = (a - 10)^2 \pmod{17}.
+\end{equation}
+由此知 $a = 10 + 17k, k \in \ZZ$.
+代入原式得 $289k^2 + 289k + 51 \equiv 0 \pmod{289}$,
+这样的 $k$ 显然不存在.
+\end{soln}
