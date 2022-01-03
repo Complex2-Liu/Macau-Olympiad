@@ -1,0 +1,21 @@
+\begin{prob}
+\label{prob:prob-5}
+\addcontentsline{toc}{section}{5. Problem 5}
+实数 $x, y, z$ 满足 $xyz = 32$ 及 $x + y + z = 4$,
+求 $\abs{x} + \abs{y} + \abs{z}$ 的最小值.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{12.}$ 如果 $x, y, z$ 都是正数,
+则 $32 = xyz \le (\frac{4}{3})^3$, 矛盾.
+不失一般性, 设 $x, y < 0, x + y =: a < 0$, 则
+\[
+M = \abs{x} + \abs{y} + \abs{z} = -x - y + 4 - a = 4 - 2a.
+\]
+下面我们求 $a$ 的最大值. 由 AM-GM 不等式有
+\[
+32 = xy(4-a) \le \frac{a^2}{4}(4-a) \implies
+(a+4)(a^2 - 8a + 32) \le 0 \implies a \le -4.
+\]
+故 $M_{\text{min}} = 4 + 8 = 12$.
+\end{soln}

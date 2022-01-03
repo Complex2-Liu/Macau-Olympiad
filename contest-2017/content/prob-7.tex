@@ -1,0 +1,33 @@
+\newpage
+\begin{prob}
+\label{prob:prob-7}
+\addcontentsline{toc}{section}{7. Problem 7}
+试求满足方程 $x^3 + 27xy + 2009 = y^3$
+的所有整数解对 $(x,y)$.
+\end{prob}
+
+\begin{soln}
+设 $y = x + a$, 代入原式得
+\begin{align*}
+27x(x+a) + 2009 &= a^3 + 3xa(x+a)\\
+   3x(x+a)(9-a) &= a^3 - 729 - 1280,
+\end{align*}
+整理得
+\begin{equation}
+\label{eq:11}
+2^8 \times 5 = 1280 = (a-9)(a^2 + 81 + 9a + 3ax + 3x^2).
+\end{equation}
+另一方面整理成关于 $x$ 的二次式有
+\[
+3(9-a)x^2 + 3a(9-a)x + 2009 - a^3 = 0.
+\]
+它的判别式为
+\begin{align*}
+\Delta &= 9a^2(9-a)^2 - 12(9-a)(2009-a^3)\\
+       &= 3(9-a)(a^3 + 27a^2 - 4 \times 2009)\\
+       &=3(9-a)(a-14)(a^2 + 41a + 574) \ge 0.
+\end{align*}
+这迫使 $9 \le a \le 14$. 结合 \cref{eq:11} 知 $a$ 的可能值为
+$10, 11, 13, 14$, 逐个验证知只有 $a = 14$ 能使 $\Delta$ 是完全平方数,
+此时 $(x, y) = (-7, 7)$.
+\end{soln}

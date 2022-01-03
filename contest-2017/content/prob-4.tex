@@ -1,0 +1,26 @@
+\begin{prob}
+\label{prob:prob-4}
+\addcontentsline{toc}{section}{4. Problem 4}
+请将 $\frac{1}{\sqrt[3]{4} + 5\sqrt[3]{2} + 1}$
+表示为 $a\sqrt[3]{4} + b\sqrt[3]{2} + c$ 的形式,
+其中 $a, b, c$ 为有理数.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{\tfrac{8}{35}\sqrt[3]{4} - \tfrac{1}{35}\sqrt[3]{2} - \tfrac{3}{35}.}$
+设 $\sqrt[3]{2} = x$, 利用 $x^3 = 2$ 我们考虑
+\begin{align*}
+1 &= (x^2 + 5x + 1)(ax^2 + bx + c) \\
+  &= ax^4 + (b+5a)x^3 + (a+c+5b)x^2 + (b+5c)x + c \\
+  &= (a+c+5b)x^2 + (2a+b+5c)x + (2b+5a+c).
+\end{align*}
+于是我们有
+\[
+\begin{cases}
+a  + c  + 5b &= 0,\\
+2a + b  + 5c &= 0,\\
+2b + 5a + c  &= 1.
+\end{cases}
+\]
+解上述方程即得答案.
+\end{soln}

@@ -1,0 +1,28 @@
+\begin{prob}
+\label{prob:prob-8}
+\addcontentsline{toc}{section}{8. Problem 8}
+点 $D, E$ 分别位于 $\triangle ABC$ 的边 $AC, AB$ 上.
+点 $F, G$ 分别为线段 $BC, ED$ 上的点使得
+$BF : FC = EG : GD = BE : CD$. 求证 $GF$ 平行 $\angle BAC$ 的平分线.
+\end{prob}
+
+\begin{center}
+\includegraphics{prob-8.pdf}
+\end{center}
+
+\begin{soln}
+设 $N$ 为劣弧 $\wideparen{BC}$ 的中点,
+$M$ 为 $E, D$ 关于 $\triangle ABC$ 的 Miquel 点.
+由 Miquel 点的性质知 $\triangle MEB \sim \triangle MDC \implies
+\frac{ME}{MD} = \frac{BE}{CD} = \frac{EG}{GD} \implies MG$
+是 $\triangle EMD$ 的角平分线, 同理 $MF$ 是 $\triangle BMC$ 的角平分线.
+由 Miquel 点的性质知 $M$ 是 $\triangle EMD$ 到 $\triangle BMC$
+的 Spiral center, 故
+\[
+\triangle MEB \sim \triangle MGF \sim \triangle MDC.
+\]
+另一方面, $MF$ 与 $\angle BAC$ 的平分线显然交于 $N$, 因此
+\[
+\angle MNA = \arc{AM} = \angle MBE = \angle MFG \implies AN \parallel GF.
+\]
+\end{soln}

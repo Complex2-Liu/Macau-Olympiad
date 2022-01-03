@@ -1,0 +1,99 @@
+\begin{prob}
+\label{prob:prob-6}
+\addcontentsline{toc}{section}{6. Problem 6}
+在一组翻译员中, 每人都会一种或多种语言, 其中 $24$ 人会说日本语,
+$24$ 人会说中文, 及 $24$ 人会说英文. 求证: 可以在这组人中选出一些人,
+使得恰好有 $12$ 人会说日本語, 恰好 $12$ 人会说中文,
+及恰好 $12$ 人会说英文.
+\end{prob}
+
+\begin{soln}
+我们把每一个翻译员对应到一个三元数组 $(x_1, x_2, x_3)$,
+其中 $x_i = 1$ 或 $0$, 代表该名翻译员会或不会第 $i$ 种语言.
+于是问题相当于要我们找出某些三元组, 把它们求和 (按分量) 得到 $(12, 12, 12)$.
+设 $a, b, c, d, e, f, g$ 分别代表三元组
+$(1,0,0), (0,1,0), (0,0,1), (1,1,0), (1,0,1), (0,1,1), (1,1,1)$ 的个数.
+我们有如下三个等式
+\begin{align}
+\label{eq:1}
+a + d + e + g &= 24,\\
+\label{eq:2}
+b + d + f + g &= 24,\\
+\label{eq:3}
+c + e + f + g &= 24.
+\end{align}
+我们考虑
+\[
+F := \min\{a,b,c\} + 2\min\{d,e,f\} + g.
+\]
+注意到若 $F \ge 12$, 则我们有
+\begin{multline*}
+\min\{a,b,c\}\cdot ((1,0,0) + (0,1,0) + (0,0,1)) +\\
+2\min\{d,e,f\}\cdot ((1,1,0) + (1,0,1) + (0,1,1)) +
+g(1,1,1) = F(1,1,1).
+\end{multline*}
+结论成立. 下面假设 $F < 12$, 且不妨设 $a = \min\{a, b, c\}$.
+我们有以下三种情形.
+\begin{description}
+\item[Case 1:] $d = \min\{d,e,f\}$. 我们有
+\begin{equation}
+\label{eq:4}
+a + 2d + g < 12,
+\end{equation}
+一方面利用 \cref{eq:1} 有
+\begin{equation}
+\label{eq:5}
+12 > a + d + e + g + d - e = 24 + d - e \implies e > 12 + d \ge 12.
+\end{equation}
+再把 \cref{eq:5} 代入 \cref{eq:3} 得
+\begin{equation}
+\label{eq:6}
+24 = c + e + f + g > c + 12 + d + f + g =
+c + 12 + 24 - b \implies b > c + 12 \ge 12.
+\end{equation}
+这里我们利用了 $d + f + g = 24 - b$ (c.f. \cref{eq:2}).
+综合 \cref{eq:5}, \cref{eq:6} 知我们可以合并
+$(0,1,0)$ 和 $(1,0,1)$ 达到 $(12,12,12)$.
+\item[Case 2:] $e = \min\{d,e,f\}$. 事实上 Case 2 与 Case 1 地位平等.
+\item[Case 3:] $f = \min\{d,e,f\}$. 我们有
+\begin{equation}
+\label{eq:7}
+a + 2f + g < 12.
+\end{equation}
+利用 \cref{eq:1} 知 $a + g = 24 - d - e$ 并代入 \cref{eq:7} 得
+\begin{equation}
+\label{eq:8}
+24 - d - e + 2f < 12 \implies d + e > 12 + 2f \ge 12.
+\end{equation}
+比较 \cref{eq:1}, \cref{eq:2} 得
+\[
+a + e = b + f.
+\]
+同理比较 \cref{eq:1}, \cref{eq:3} 得
+\[
+a + d = c + f,
+\]
+上述两式相加并利用 \cref{eq:8} 得
+\begin{equation}
+\label{eq:9}
+b + c + 2f = 2a + d + e > 2a + 12 + 2f \implies
+b + c > 12 + 2a \ge 12.
+\end{equation}
+最后, 比较 \cref{eq:2}, \cref{eq:3} 得
+\begin{equation}
+\label{eq:10}
+b + d = c + e \implies b - e = c - d,
+\end{equation}
+这意味着如果 $b = \min\{b,e\}$, 则我们一定有 $c = \min\{c,d\}$.
+因此根据 \cref{eq:8}, \cref{eq:9} 知
+\[
+\min\{b,e\} + \min\{c,d\} = \begin{cases}
+b + c \quad \text{or}\\
+d + e
+\end{cases} \ge 12.
+\]
+这意味着我们可以把 $\min\{b,e\}$ 个 $(0,1,0)$ 和 $(1,0,1)$ 相加,
+再把 $\min\{c,d\}$ 个 $(0,0,1)$ 和 $(1,1,0)$ 相加,
+最终达到 $(12,12,12)$.
+\end{description}
+\end{soln}

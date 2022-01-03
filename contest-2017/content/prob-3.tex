@@ -1,0 +1,35 @@
+\begin{prob}
+\label{prob:prob-3}
+\addcontentsline{toc}{section}{3. Problem 3}
+对任意正整数 $n$, 用 $n$ 来表示和式
+$S_n = \sum_{k=0}^{n-1}(-1)^k\cos^n(\frac{k\pi}{n})$.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{\tfrac{n}{2^{n-1}}.}$
+我们把 $\cos$ 替换掉:
+\[
+\cos^n\left(\frac{k\pi}{n}\right) =
+\left(\frac{e^{i\theta} + e^{-i\theta}}{2}\right)^n,
+\theta = \frac{k\pi}{n}.
+\]
+于是
+\[
+S_n = \frac{1}{2^n}\sum_{k=0}^{n-1}(-1)^k \sum_{j=0}^n \binom{n}{j}
+e^{i\frac{j\cdot k\pi}{n}} \times e^{-i\frac{(n-j)\cdot k\pi}{n}}.
+\]
+换顺求和得
+\[
+S_n = \frac{1}{2^n}\sum_{j=0}^n \binom{n}{j}\sum_{k=0}^{n-1}
+(-1)^k e^{i\frac{(2j - n)\cdot k\pi}{n}} = \frac{1}{2^n}
+\sum_{j=0}^n \binom{n}{j}\sum_{k=0}^{n-1} e^{i\frac{2j\cdot k\pi}{n}}.
+\]
+注意到对 $j = 0$ 或 $n$, 有 $\sum_{k=0}^{n-1}e^{i\frac{2j\cdot k\pi}{n}} = n$.
+对于 $1 \le j \le n - 1$, 我们发现 $\sum_{k=0}^{n-1}e^{i\frac{2j\cdot k\pi}{n}}$
+实际上是对 $n$ 次单位根的求和, 在该根不为 $1$ 的情况下和为 $0$
+(比如对于三次单位根 $\omega \ne 1$, 我们有 $\omega^2 + \omega + 1 = 0$).
+因此
+\[
+S_n = \frac{1}{2^n}\times 2n = \frac{n}{2^{n-1}}.
+\]
+\end{soln}

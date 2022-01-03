@@ -1,0 +1,24 @@
+\begin{prob}
+\label{prob:prob-2}
+\addcontentsline{toc}{section}{2. Problem 2}
+正数 $x, a, b$ 满足
+$\frac{\sin^4 x}{a} + \frac{\cos^4 x}{b} = \frac{1}{a+b}$,
+试用 $a, b$ 表示 $\frac{\sin^8 x}{a^3} + \frac{\cos^8 x}{b^3}$.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{\tfrac{1}{(a+b)^3}.}$
+考虑 Cauchy 不等式有
+\[
+1 = (a+b)\left(\frac{\sin^4 x}{a} + \frac{\cos^4 x}{b}\right)
+  \ge (\sin^2 x + \cos^2 x)^2 = 1,
+\]
+等号成立的条件是 $\sin^4 x = \lambda a^2, \cos^4 x = \lambda b^2$.
+代入原式得 $\lambda(a+b) = \frac{1}{a+b} \implies
+\lambda = \frac{1}{(a+b)^2}$. 故
+\[
+\frac{\sin^8 x}{a^3} + \frac{\cos^8 x}{b^3} =
+\frac{\lambda^2 a^4}{a^3} + \frac{\lambda^2 b^4}{b^3} =
+\lambda^2(a+b) = \frac{1}{(a+b)^3}.
+\]
+\end{soln}
