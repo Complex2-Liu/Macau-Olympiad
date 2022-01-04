@@ -1,0 +1,26 @@
+\begin{prob}
+\label{prob:prob-5}
+\addcontentsline{toc}{section}{5. Problem 5}
+若 $y_1, y_2, y_3$ 为 $y^3 + 3y + 2016 = 0$ 的三个互异根,
+$\alpha$ 满足 $\alpha^2 + \alpha + 1 = 0$, 则
+$(y_1 + \alpha y_2 + \alpha^2 y_3)(y_1 + \alpha^2 y_2 + \alpha y_3)$
+的值是多少.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{-9.}$ 由 Vieta 定理有
+\begin{align*}
+  S_1 &= y_1 + y_2 + y_3 = 0,\\
+  S_2 &= y_1y_2 + y_2y_3 + y_3y_1 = 3.
+\end{align*}
+由 $\alpha$ 的定义知 $\alpha$ 是 $3$ 次单位根,
+即 $\alpha^3 = 1, \alpha^2 + \alpha = -1$, 直接展开表达式有
+\begin{align*}
+&(y_1 + \alpha y_2 + \alpha^2 y_3)(y_1 + \alpha^2 y_2 + \alpha y_3)\\
+&= y_1^2 + \alpha^3y_2^2 + \alpha^3y_3^2 + (\alpha^2 + \alpha)(y_1y_2 + y_1y_3)
++ \alpha^2(\alpha^2 + 1)y_2y_3\\
+&=y_1^2 + y_2^2 + y_3^2 - y_1y_2 - y_1y_3 + \alpha^2(-\alpha)y_2y_3\\
+&=y_1^2 + y_2^2 + y_3^2 - y_1y_2 - y_1y_3 - y_2y_3\\
+&=S_1^2 - 3S_2 = -9.
+\end{align*}
+\end{soln}

@@ -1,0 +1,25 @@
+\begin{prob}
+\label{prob:prob-8}
+\addcontentsline{toc}{section}{8. Problem 8}
+设 $ABCD$ 是正方形, 点 $P$ 满足 $\angle APB + \angle CPD = 180^\circ$,
+求点 $P$ 的轨迹.
+\end{prob}
+
+\begin{center}
+\includegraphics{prob-8.pdf}
+\end{center}
+
+\begin{soln}
+如图所示, 构造平行四边形 $PBCQ$, 注意到此时此刻 $PQDA$ 也是一个平行四边形.
+\begin{description}
+\item[Case 1:] 若 $P$ 在正方形的内部.
+我们有 $\dang DQC + \dang CPD = \dang APB + \dang CPD = 180^\circ$,
+故 $C, Q, D, P$ 四点共圆 $\implies \dang PDC = \dang PQC
+= \dang CBP \implies P$ 在对角线 $AC$ 或 $BD$ 上.
+\item[Case 2:] 若 $P$ 在正方形的外部.
+我们有 $QP \perp CD$ 且 $\dang DQC + \dang DPC =
+\dang APB + \dang DPC = 180^\circ \implies P$ 是 $\triangle CQD$ 的垂心.
+因此 $\dang CBP = \dang PQC = \dang CDP \implies P$
+在正方形 $ABCD$ 的外接圆上.
+\end{description}
+\end{soln}

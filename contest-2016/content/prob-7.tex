@@ -1,0 +1,25 @@
+\begin{prob}
+\label{prob:prob-7}
+\addcontentsline{toc}{section}{7. Problem 7}
+令 $S_n = \sum_{k=1}^n \frac{1}{k}, n \ge 3$. 求证:
+\[
+n(n+1)^{\frac{1}{n}} < S_n < n - (n-1)n^{-\frac{1}{n-1}}.
+\]
+\end{prob}
+
+\begin{soln}
+先证左边, 我们有
+\begin{align*}
+\sum_{i=1}^n\frac{1}{i} + n &= \sum_{i=1}^n\left(\frac{1}{i} + 1\right)\\
+                            &= \sum_{i=1}^n\left(\frac{i+1}{i}\right)\\
+                            &\ge n\cdot \sqrt[n]{\frac{2}{1}\times \cdots \times \frac{n+1}{n}}\\
+                            &= n(n+1)^{\frac{1}{n}}.
+\end{align*}
+类似地可以证明右边
+\begin{align*}
+n - \sum_{i=1}^n \frac{1}{i} &= \sum_{i=1}^n\left(1 - \frac{1}{i}\right)\\
+                             &= \sum_{i=2}^n\left(\frac{i-1}{i}\right)\\
+                             &\ge (n-1)\sqrt[n-1]{\frac{1}{2}\times \cdots \times \frac{n-1}{n}}\\
+                             &= (n-1)n^{-\frac{1}{n-1}}.
+\end{align*}
+\end{soln}

@@ -1,0 +1,15 @@
+\begin{prob}
+\label{prob:prob-2}
+\addcontentsline{toc}{section}{2. Problem 2}
+若正整数 $n$ 是其数字和的 300 倍, 求 $n$.
+\footnote{在比赛的试卷中, 该题的描述有问题, 是一条错题.}
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{2700.}$ 记 $d(n) :=$ 正整数 $n$ 的数字和.
+显然 $n$ 是 $100$ 的倍数, 设 $n = 100k$, 有
+$100\cdot k = 300\cdot d(n) = 300\cdot d(k) \implies k = 3\cdot d(k)$.
+设 $k$ 为 $b$ 位数, 则 $10^{b-1} \le k = 3\cdot d(k) \le 3\cdot 9b = 27b
+\implies b \le 2$. 显然 $k$ 只能为两位数 $10p + q$,
+代入得 $7p = 2q$, 这迫使 $p = 2, q = 7$.
+\end{soln}

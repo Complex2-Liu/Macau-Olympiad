@@ -1,0 +1,63 @@
+\begin{prob}
+\label{prob:prob-10}
+\addcontentsline{toc}{section}{10. Problem 10}
+展开 $(x + 2x^2 + 3x^3 + \cdots + nx^n)^2 =
+a_0 + a_1x + \cdots + a_{2n}x^{2n}$ 为关于 $x$ 的多项式,
+用 $n$ 来表示和式 $a_{n+1} + \cdots + a_{2n}$.
+\end{prob}
+
+\begin{lem}[Summation by parts]
+\label{lem:sum-by-parts}
+设 $\{a_k\}, \{b_k\}$ 是两个数列, 记 $B_j = \sum_{i=1}^j b_i,
+j = 1, 2, \cdots, n$ 则我们有
+\[
+a_1b_1 + \cdots + a_nb_n = \sum_{i=1}^{n-1}(a_i - a_{i+1})\cdot B_i + a_n\cdot B_n.
+\]
+\end{lem}
+
+\begin{proof}
+经典的 Abel 分部求和, 证明略.
+\end{proof}
+
+\begin{lem}[组合恒等式]
+给定正整数 $n, k$ 其中 $n > k$. 我们有以下恒等式
+\[
+\sum_{i=k}^n \binom{i}{k} = \binom{n+1}{k+1}.
+\]
+\end{lem}
+
+\begin{proof}
+利用数学归纳法, 具体证明略.
+\end{proof}
+
+\begin{soln}
+令 $x = 1$ 代入原式知 $a_0 + \cdots + a_{2n} = \frac{n^2(n+1)^2}{4}$.
+下面我们求 $a_0 + \cdots + a_n$.
+先分析任意一个 $a_k$, 我们有
+\[
+a_k = \sum_{i=1}^{k-1}i(k-i).
+\]
+利用 \cref{lem:sum-by-parts} 有
+\begin{align*}
+\sum_{i=1}^{k-1}i(k-i) &= \sum_{i=1}^{k-2}\frac{i(i+1)}{2} + \frac{k(k-1)}{2}\\
+                       &= \frac{1}{2}\sum_{i=1}^{k-2}i^2 + \frac{1}{2}
+                          \sum_{i=1}^{k-2}i + \frac{k(k-1)}{2}\\
+                       &= \frac{1}{2}\cdot \frac{(k-2)(k-1)(2k-3)}{6} +
+                          \frac{1}{2}\cdot \frac{(k-2)(k-1)}{2} + \frac{k(k-1)}{2}\\
+                       &= \frac{(k-2)(k-1)}{4}\left(\frac{2k-3}{3} + 1\right) + \frac{k(k-1)}{2}\\
+                       &= \frac{k(k-1)(k-2)}{6} + \frac{k(k-1)}{2}\\
+                       &= \binom{k}{3} + \binom{k}{2}\\
+                       &= \binom{k+1}{3}.
+\end{align*}
+故
+\[
+\sum_{i=0}^n a_i = \sum_{i=0}^n \binom{i+1}{3} = \binom{n+2}{4}
+= \frac{(n+2)(n+1)n(n-1)}{24}.
+\]
+于是
+\begin{align*}
+  a_{n+1} + \cdots + a_{2n} &= \frac{n^2(n+1)^2}{4} - \frac{(n+2)(n+1)n(n-1)}{24}\\
+                            &= \frac{n(n+1)}{24}\left(6n(n+1) - (n+2)(n-1)\right)\\
+                            &= \frac{n(n+1)(5n^2 + 5n + 2)}{24}.
+\end{align*}
+\end{soln}

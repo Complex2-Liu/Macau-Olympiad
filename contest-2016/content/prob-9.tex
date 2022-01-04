@@ -1,0 +1,46 @@
+\begin{prob}
+\label{prob:prob-9}
+\addcontentsline{toc}{section}{9. Problem 9}
+求证: 在任意 $39$ 个连续的正整数中, 其中一个的数字和必定是 $11$ 的倍数.
+\end{prob}
+
+\begin{soln}
+假设结论不真, 记 $d(n) :=$ 正整数 $n$ 的数字和. 注意到我们有
+\begin{equation}
+d(n) \equiv \begin{cases}
+d(n-1) + 1 \quad &\text{if $n \ndivides 10$}\\
+d(n-1) + 3 \quad &\text{if $n \divides 10$ and $n \ndivides 100$}\\
+d(n-1) + b \quad &\text{for some $b \in \{0,1,2,\cdots,10\}$ if $n \divides 100$}
+\end{cases} \pmod{11}.
+\end{equation}
+比如说 $d(10) \equiv d(9) + 3 \equiv 1 \pmod{11}$,
+$d(10000) = d(9999) + 9 \pmod{11}$.
+由于只有连续的 $39$ 个正整数 $a_1, \cdots, a_{39}$,
+故其中至多只有一个数是 $100$ 的倍数.
+设其中第一个为 $10$ 的倍数的是 $a_k$, 则显然 $k \le 10$.
+若 $a_k \equiv j \pmod{11}, j \ge 2$, 则此时
+$d(a_{k+11-j})$ 便是 $11$ 的倍数, 矛盾, 所以只能是 $j = 1$.
+
+\bigskip
+
+进一步地, $a_{k+9} \equiv 10 \pmod{11}$.
+类似上述讨论 $a_{k+10}$ 也必须 $\equiv 1 \pmod{11}$
+(否则考虑 $a_{k+21-j}$, 其中 $j$ 是 $a_{k+10} \mod 11$ 的余数).
+这要求 $d(a_{k+10}) \equiv d(a_{k+9}) + 2 \pmod{11}$,
+即 $a_{k+10}$ 必为 $100$ 的倍数. 再考虑 $a_{k+20}$,
+它必然是 $10$ 的倍数且不是 $100$ 的倍数,
+于是 $d(a_{k+20}) \equiv d(a_{k+19}) + 3 \equiv 2 \pmod{11}$,
+此时 $d(a_{k+29})$ 便是 $11$ 的倍数且 $k + 29 \le 39$, 矛盾.
+\end{soln}
+
+\begin{rem*}
+事实上, 这里的 $39$ 是最优的, 我们可以举出 $38$ 的反例:
+\[
+\begin{array}{lllll}
+999981  & 999982  & \cdots & 999989 & 999990\\
+999991  & 999992  & \cdots & 999999 & 1000000\\
+\cdots  & \cdots  & \cdots & \cdots & \cdots \\
+1000011 & 1000012 & \cdots & 1000018
+\end{array}
+\]
+\end{rem*}

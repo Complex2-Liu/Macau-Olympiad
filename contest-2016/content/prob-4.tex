@@ -1,0 +1,21 @@
+\begin{prob}
+\label{prob:prob-4}
+\addcontentsline{toc}{section}{4. Probelm 4}
+已知 $\mathbf{a}, \mathbf{b}$ 为平面上的单位向量且
+$\mathbf{a}\cdot \mathbf{b} = 0$. 若平面向量 $\mathbf{x}$
+满足 $(3\mathbf{a} - \mathbf{x})\cdot (4\mathbf{b} - \mathbf{x}) = 0$,
+则 $\mathbf{x}$ 的长度 $\abs{\mathbf{x}}$ 的最大值是多少.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{5.}$ 由 $\mathbf{a}\cdot \mathbf{b} = 0$
+知 $\mathbf{a}, \mathbf{b}$ 垂直, 不妨设 $\mathbf{a} = (1,0),
+\mathbf{b} = (0,1), \mathbf{x} = (x,y)$. 我们有
+\[
+0 = (3-x, -y)\cdot (-x, 4-y) = x(x-3) + y(y-4) = x^2 + y^2 - 3x - 4y = 0.
+\]
+由 Cauchy 不等式有
+\[
+(x^2 + y^2)(9 + 16) \ge (3x + 4y)^2 = (x^2 + y^2)^2 \implies x^2 + y^2 \le 25.
+\]
+\end{soln}
