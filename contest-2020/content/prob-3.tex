@@ -71,3 +71,25 @@ Then we are done by part (ii) of \cref{thm:sos}.
 一开始觉得不会很难估计能轻松凑个局部出来, 结果根本凑不动,
 各种代数变形后阴差阳错得到了一个 S.O.S 形式.
 \end{rem*}
+
+\begin{soln}[Alternative solution]
+由 Cauchy 不等式, $a, b, c > 0$ 知
+\[
+\left(\frac{x^2}{a} + \frac{y^2}{b}\right)(a + b)
+\ge (\abs{x} + \abs{y})^2 \ge (x + y)^2 \implies
+\frac{x^2}{a} + \frac{y^2}{b} \ge \frac{(x + y)^2}{a + b}.
+\]
+于是我们有
+\begin{align*}
+\text{LHS} &= \cycsum \frac{(a - 1)^2}{b}
+            = \frac{1}{2}\cycsum\left(\frac{(a - 1)^2}{b} + \frac{(b - 1)^2}{c}\right)\\
+           &\ge \frac{1}{2}\cycsum \frac{(a - 1 + b - 1)^2}{b + c}\\
+           &= \frac{1}{4}\cycsum \frac{2c^2}{b + c},
+\end{align*}
+所以
+\[
+\text{LHS} - \text{RHS} \ge
+\frac{1}{4}\cycsum\left(\frac{c^2 - b^2}{b + c}\right)
+= \frac{1}{4}\cycsum (c - b) = 0.
+\]
+\end{soln}
