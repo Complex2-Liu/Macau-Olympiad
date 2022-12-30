@@ -1,0 +1,18 @@
+\begin{prob}
+\label{prob:prob-10}
+\addcontentsline{toc}{section}{10. Problem 10}
+试确定 (并给出证明) 最小的实数 $C$ 使得对满足
+$\sum_{j=1}^n x_j = 1$ 的任意正实数 $x_1, x_2, \cdots, x_n$, 都有
+$C\sum_{j=1}^n \frac{x_j^2}{1 - x_j} \ge 1$.
+\end{prob}
+
+\begin{soln}
+答案是 $\boxed{n-1}$.
+由 Cauchy 不等式我们有
+\[
+\sum_{j=1}^n \frac{x_j^2}{1 - x_j}
+\ge
+\frac{(\sum_{j=1}^n x_j)^2}{n - \sum_{j=1}^n x_j}
+= \frac{1}{n-1}.
+\]
+\end{soln}

@@ -1,0 +1,27 @@
+import olympiad;
+import cse5;
+size(6cm);
+defaultpen(fontsize(9pt));
+
+pair A = dir(90);
+pair B = dir(210);
+pair C = dir(-30);
+pair D = (0, 0);
+pair E = (0.4, 0);
+draw(A -- B -- C -- cycle);
+draw(A -- E -- B);
+draw(C -- E -- D);
+filldraw(A -- D -- C -- cycle, red + opacity(0.1));
+filldraw(B -- D -- C -- cycle, green + opacity(0.1));
+filldraw(A -- D -- B -- cycle, blue + opacity(0.1));
+label("$A$", A, dir(90));
+label("$B$", B, dir(210));
+label("$C$", C, dir(-30));
+label("$D$", D, dir(150));
+label("$E$", E, dir(40));
+dot(A);
+dot(B);
+dot(C);
+dot(D);
+dot(E);
+dot(IP(E -- B, D -- C), purple);

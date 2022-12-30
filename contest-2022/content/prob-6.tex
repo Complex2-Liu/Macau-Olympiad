@@ -1,0 +1,29 @@
+\begin{prob}
+\label{prob:prob-6}
+\addcontentsline{toc}{section}{6. Problem 6}
+平面有 $5$ 个点, 其中任意 $3$ 个点均不共线,
+以这些点为端点连接线段. 除这 $5$ 个点外,
+试确定这些线段的交点个数, 并给出证明.
+\end{prob}
+
+\begin{soln}
+我们考虑凸包的点的个数 $s$.
+假如 $s = 3$, 可以不妨设 $A, B, C, D$ 四点的位置如下
+
+\begin{center}
+\includegraphics[scale=0.7]{./prob-6-fig-1.pdf}
+\end{center}
+
+容易看出内部的 $3$ 个三角形是地位对称的,
+所以此时交点个数为 $\boxed{1}$.
+假如 $s = 4$, 可以不妨设 $A, B, C, D$ 四点的位置如下
+
+\begin{center}
+\includegraphics[scale=0.7]{./prob-6-fig-2.pdf}
+\end{center}
+
+容易看出内部的 $4$ 个三角形是地位对称的,
+所以此时交点个数为 $\boxed{3}$.
+假如 $s = 5$, 可以不妨设 $A, B, C, D, E$ 构成正五边形,
+容易看出此时交点个数为 $\boxed{5}$.
+\end{soln}

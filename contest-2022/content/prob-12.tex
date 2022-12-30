@@ -1,0 +1,49 @@
+\begin{prob}
+\label{prob:prob-12}
+\addcontentsline{toc}{section}{12. Problem 12}
+试找出所有能表成以下形式的整数:
+$\frac{b}{a}+\frac{c}{a}+\frac{c}{b}+\frac{a}{b}+\frac{a}{c}+\frac{b}{c}$,
+其中 $a, b, c$ 为两两互素的正整数.
+\end{prob}
+
+\begin{soln}
+设 $f(a,b,c) := \frac{b}{a} + \frac{c}{a} + \frac{c}{b} +$
+$\frac{a}{b} + \frac{a}{c} + \frac{b}{c}$,
+我们先证明一个引理:
+
+\begin{lem}
+\label{lem:prob-12}
+设 $a, b, x, y$ 是正整数满足 $\gcd(a, b) = 1$, then
+\[
+\frac{x}{a} + \frac{y}{b} \in \ZZ
+\]
+if and only if $a \mid x$ and $b \mid y$.
+\end{lem}
+
+\begin{subproof}
+在 $\gcd(a, b) = 1$ 的条件下我们有
+\begin{align*}
+\frac{x}{a} + \frac{y}{b} \in \ZZ &\iff ab \mid bx + ay \\
+                                  &\iff a \mid bx + ay \quad \text{and} \quad b \mid bx + ay \\
+                                  &\iff a \mid bx \quad \text{and} \quad b \mid ay \\
+                                  &\iff a \mid x \quad \text{and} \quad b \mid y \qedhere
+\end{align*}
+\end{subproof}
+
+Applying \Cref{lem:prob-12} with $\gcd(a, bc) = 1$ yields
+$a \mid b + c$, 再利用 $a, b, c$ 的对称性我们有
+\begin{equation}
+\label{eq:prob-12-eq-1}
+\begin{aligned}
+a &\mid b + c \\
+b &\mid c + a \\
+c &\mid a + b
+\end{aligned}
+\end{equation}
+不妨设 $a \le b \le c$ (还是因为 $a, b, c$ 对称),
+then $a + b \le 2c$. 若 $a + b = 2c$, 则只能是 $a = b = c = 1$,
+此时 $f(a,b,c) = \boxed{6}$. 下面我们总是假设 $a + b = c$.
+由 \Cref{eq:prob-12-eq-1} 知 $a \mid 2b, b \mid 2a$,
+所以只能是 $(a, b, c) = (1, 1, 2)$ 或 $(1, 2, 3)$,
+此时 $f(a,b,c) = \boxed{7}$ 或 $\boxed{9}$.
+\end{soln}

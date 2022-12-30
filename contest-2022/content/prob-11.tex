@@ -1,0 +1,40 @@
+\begin{prob}
+\label{prob:prob-11}
+\addcontentsline{toc}{section}{11. Problem 11}
+求证: 对任意的正数 $x, y, z$, 以下不等式成立
+\[
+xyz(x + 2)(y + 2)(z + 2) \le
+\left(1 + \frac{2(xy + yz + zx)}{3}\right)^3
+\]
+\end{prob}
+
+\begin{soln}
+不等式是对称的, 但不是齐次的,
+容易看出取等的时候 $x = y = z = 1$,
+所以我们肯定会用到 $(x - 1)^2 \ge 0 \iff x^2 + 1 \ge 2x$.
+右边的 $3$ 次方肯定是 AM-GM 不等式产生出来的,
+在凑 AM-GM 的时候, 我们发现右边的 $xy + yz + zx$ 很讨厌
+(这是因为 $xy + yz + zx$ 是一个比较小的东西,
+say $xy + yz + zx \le x^2 + y^2 + z^2$).
+于是我们考虑换元
+\[
+(a, b, c) = (\sqrt{xy}, \sqrt{yz}, \sqrt{zx})
+\iff
+(x, y, z) = \left(\frac{ca}{b}, \frac{ab}{c}, \frac{bc}{a}\right),
+\]
+恶心的 $xy + yz + zx$ 变成了 $a^2 + b^2 + c^2$.
+我们再计算 LHS:
+\begin{align*}
+\text{LHS} &= \prod_{\text{cyc}} x(x+2) \\
+           &= \prod_{\text{cyc}} \frac{ca}{b}\left(\frac{ca}{b} + 2\right) \\
+           &= abc\prod_{\text{cyc}}\left(\frac{ca}{b} + 2\right) \\
+           &= (ca + 2b)(ab + 2c)(bc + 2a).
+\end{align*}
+利用 $2a \le a^2 + 1, ab + bc + ca \le a^2 + b^2 + c^2$
+以及 AM-GM 不等式, 我们有
+\[
+\text{LHS} \le \left(\frac{(ab + bc + ca) + (a^2 + b^2 + c^2) + 3}{3}\right)^3
+\le \left(1 + \frac{2(a^2 + b^2 + c^2)}{3}\right)^3
+= \text{RHS}
+\]
+\end{soln}

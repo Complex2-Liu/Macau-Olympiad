@@ -1,0 +1,34 @@
+\begin{prob}
+\label{prob:prob-8}
+\addcontentsline{toc}{section}{8. Problem 8}
+在圆周上任意写上 $49$ 个 $A$ 及 $50$ 个 $B$,
+然后每轮进行下列两项操作:
+\begin{enumerate}[label=(\roman*)]
+  \item 在两个相同字母之间写上 $B$,
+    在两个不同字母之间写上 $A$;
+  \item 擦掉原有的字母并保留刚写的字母.
+\end{enumerate}
+接着轮流继续进行同样的操作. 问:
+能否经有限轮操作后使得圆周上的字母都变成 $B$? 给出理由.
+\end{prob}
+
+\begin{soln}
+答案是不能. 给 $A$ 赋值 $1$ 给 $B$ 赋值 $0$,
+在 modulo $2$ 的意义下我们有
+\[
+(x_1, x_2, \cdots, x_{n-1}, x_n) \mapsto
+(x_1 + x_2, x_2 + x_3, \cdots, x_{n-1} + x_n, x_n + x_1)
+\]
+观察 $\sum x_i$ 知一轮操作以后字母 $A$ 的个数将一直是偶数.
+
+\begin{claim}
+假设我们有 $2a, a > 0$ 个 $A$,
+那么一轮操作后不可能所有字母都变成 $B$.
+\end{claim}
+
+\medskip
+
+这是因为 $a \ne 0$, 并且字母的总个数 $99$ 是奇数,
+所以一定存在相邻的两个字母满足其中一个是 $A$, 另一个是 $B$.
+这两个字母便确保一轮操作之后字母 $A$ 的个数不可能是 $0$.
+\end{soln}

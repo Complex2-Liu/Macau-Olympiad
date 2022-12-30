@@ -1,0 +1,29 @@
+\begin{prob}
+\label{prob:prob-7}
+\addcontentsline{toc}{section}{7. Problem 7}
+甲乙两人进行如下游戏, 甲先开始, 两人轮流从
+$1, 2, \cdots, 100, 101$ 中每次任意勾去 $9$ 个数,
+经过这样 $11$ 次勾掉后, 还剩两个数,
+这时所余两个数之差即为甲的得分.
+试证明: 不论乙怎样做, 甲有方法可至少取得 $55$ 分.
+\end{prob}
+
+\begin{soln}
+考虑如下配对:
+\[
+A_i = \{i, i + 55: 1 \le i \le 46\}, \quad
+B = \{47, 48, \cdots, 55\}.
+\]
+一开始甲先把 $B$ 中的 $9$ 个数勾掉.
+设第 $n$ 轮操作后剩余数字的全体为集合 $S_n$.
+考虑
+\begin{align*}
+\mathcal{A}_n &= \{A_i: \abs{A_i\cap S_n} = 2\}, \\
+\mathcal{B}_n &= \{A_i: \abs{A_i\cap S_n} = 1\}, \\
+\mathcal{C}_n &= \{A_i: \abs{A_i\cap S_n} = 0\}.
+\end{align*}
+不论乙怎样操作, 甲总是能使得对任意奇数 $n \le 11$, 有
+$\abs{\mathcal{B}_n} = 0$.
+于是最后剩余的两数 $S_{11}$ 一定是某个 $A_i$.
+而 $A_i$ 的选取保证了甲的得分 $\ge 55$.
+\end{soln}

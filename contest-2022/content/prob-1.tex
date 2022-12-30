@@ -1,0 +1,39 @@
+\begin{prob}
+\label{prob:prob-1}
+\addcontentsline{toc}{section}{1. Problem 1}
+若三角形的外接圆半径为 $2$,
+这三角形的面积的最大值是多少?
+\end{prob}
+
+\begin{soln}
+我们有 $a = 2r\sin A, b = 2r\sin B, c = 2r\sin C$,
+\[
+[ABC] = \frac{1}{2}bc\sin A
+= 2r^2\sin A \sin B \sin C
+= 8 \sin A \sin B \sin C.
+\]
+于是问题归结为求
+\begin{equation}
+\label{eq:prob-1-eq-1}
+f(\alpha,\beta,\gamma)
+= \sin\alpha\sin\beta\sin\gamma
+\end{equation}
+的最大值 with $0 < \alpha,\beta,\gamma < \pi$
+and $\alpha + \beta + \gamma = \pi$.
+利用 AM-GM 不等式, 我们有
+\[
+f(\alpha,\beta,\gamma)
+\le
+\left(\frac{\sin\alpha + \sin\beta + \sin\gamma}{3}\right)^3.
+\]
+Since $\sin x$ is concave in $(0,\pi)$, 由 Jensen 不等式知
+\[
+\frac{\sin\alpha + \sin\beta + \sin\gamma}{3}
+\le
+\sin\left(\frac{\alpha + \beta + \gamma}{3}\right)
+=
+\frac{\sqrt{3}}{2}.
+\]
+所以 $f(\alpha,\beta,\gamma) \le \frac{3\sqrt{3}}{8}$,
+面积的最大值是 $\boxed{3\sqrt{3}}$.
+\end{soln}

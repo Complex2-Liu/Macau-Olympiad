@@ -1,0 +1,30 @@
+\begin{prob}
+\label{prob:prob-9}
+\addcontentsline{toc}{section}{9. Problem 9}
+设 $x_1, x_2, \cdots, x_n$ 为正数. 求证以下不等式:
+\begin{enumerate}[label=(\roman*)]
+  \item $(x_1 + \frac{1}{x_1})(x_2 + \frac{1}{x_2}) \ge$
+    $(x_1 + \frac{1}{x_2})(x_2 + \frac{1}{x_1})$.
+  \item $(x_1 + \frac{1}{x_1})\cdots (x_{n-1} + \frac{1}{x_{n-1}})(x_n + \frac{1}{x_n}) \ge$
+    $(x_1 + \frac{1}{x_2})\cdots (x_{n-1} + \frac{1}{x_n})(x_n + \frac{1}{x_1})$.
+\end{enumerate}
+\end{prob}
+
+\begin{soln}
+(i) 是 (ii) 的特殊情况, 我们只需证 (ii).
+因为 $x_1, x_2, \cdots, x_n$ 都是正数, 所以 (ii) 等价于
+\begin{equation}
+\label{eq:prob-9-eq-1}
+(x_1^2 + 1)(x_2^2 + 1) \cdots (x_n^2 + 1) \ge
+(x_1x_2 + 1)(x_2x_3 + 1) \cdots (x_nx_1 + 1).
+\end{equation}
+由 Cauchy 不等式, 我们有
+\begin{align*}
+(x_1^2 + 1)(x_2^2 + 1) &\ge (x_1x_2 + 1)^2, \\
+(x_2^2 + 1)(x_3^2 + 1) &\ge (x_2x_3 + 1)^2, \\
+                       &\cdots, \\
+(x_{n-1}^2 + 1)(x_n^2 + 1) &\ge (x_{n-1}x_n + 1)^2, \\
+(x_n^2 + 1)(x_1^2 + 1) &\ge (x_nx_1 + 1)^2,
+\end{align*}
+全部乘起来便证明了 \Cref{eq:prob-9-eq-1}.
+\end{soln}

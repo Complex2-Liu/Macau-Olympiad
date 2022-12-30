@@ -1,0 +1,26 @@
+\begin{prob}
+\label{prob:prob-3}
+\addcontentsline{toc}{section}{3. Problem 3}
+设 $O$ 为坐标平面上的原点, 一直线经过点 $(3,4)$
+并交 $x$-轴及 $y$-轴分别于 $A$ 及 $B$ 两点.
+已知 $\triangle OAB$ 位于第一象限内,
+试确定 $\triangle OAB$ 的面积的最小值, 并给出理由.
+\end{prob}
+
+\begin{soln}
+问题归结为求
+\begin{equation}
+\label{eq:prob-3-eq-1}
+f(a, b) = ab = uv + 4u + 3v + 12
+\end{equation}
+在约束条件 $\frac{0 - 4}{a - 3} = \frac{b - 4}{0 - 3}$
+$\iff (a-3)(b-4) = 12$ and $u := a - 3 > 0, v := b - 4 > 0$ 下的最小值.
+
+\begin{center}
+\includegraphics[scale=0.9]{./prob-3.pdf}
+\end{center}
+
+由 AM-GM 不等式知 $4u + 3v \ge 2\sqrt{12uv} = 24$,
+所以 $f(a,b) \ge 12 + 24 + 12 = 48$,
+面积的最小值是 $\boxed{24}$.
+\end{soln}
