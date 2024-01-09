@@ -1,6 +1,3 @@
-# Macau Math Olympiad
+This repository is now archived and will no longer be updated.
 
-See [https://complex2math.com/problems/](https://complex2math.com/problems/).
-
-To compile these `.tex` file in LaTeX, you will need my
-[personal style file](https://github.com/complex2-liu/texmf/).
+For the successor of this project, please visit https://github.com/Complex2-Liu/macmo
